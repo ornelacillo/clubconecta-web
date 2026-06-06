@@ -236,15 +236,21 @@ h1.hero-heading {
   z-index:1;
   opacity:.88;
 }
-.card-bg {
-  width:220px; height:300px;
-  bottom:40px; right:20px;
+.card-lunch {
+  width:220px; height:280px;
+  bottom:40px; right:10px;
   transform:rotate(-10deg);
   z-index:0;
-  opacity:.5;
-  background:rgba(6,61,48,.08);
-  border:1.5px solid var(--borde-claro);
+  opacity:.85;
 }
+.card-lunch img {
+  object-fit:cover !important;
+  object-position:center !important;
+  filter:grayscale(30%) !important;
+}
+.card-lunch:hover img { filter:grayscale(0%) !important; }
+.draggable { cursor:grab; user-select:none; }
+.draggable.dragging { cursor:grabbing; transition:none !important; z-index:99 !important; }
 
 /* ===== ABOUT SECTION (dark) ===== */
 .section-about {
@@ -800,7 +806,7 @@ footer {
 <!-- NAV PILL -->
 <nav id="site-nav">
   <div class="nav-logo-pill" onclick="showPage('home')" title="Club Conecta">
-    <img src="./img/logo.png" alt="Club Conecta">
+    <img src="./img/Logo-04.jpg" alt="Club Conecta">
   </div>
   <div class="nav-links">
     <button class="nav-link active" id="nav-home" onclick="showPage('home')">Inicio</button>
@@ -831,12 +837,14 @@ footer {
         <button class="hero-link-sec" onclick="showPage('blog')">Ver contenido</button>
       </div>
     </div>
-    <div class="hero-imgs">
-      <div class="card-bg"></div>
-      <div class="hero-img-card card-orne">
+    <div class="hero-imgs" id="hero-imgs">
+      <div class="hero-img-card card-lunch draggable">
+        <img src="./img/lunch-completo.jpg" alt="Lunch Club Conecta">
+      </div>
+      <div class="hero-img-card card-orne draggable">
         <img src="./img/orne.png" alt="Orne">
       </div>
-      <div class="hero-img-card card-flor">
+      <div class="hero-img-card card-flor draggable">
         <img src="./img/flor.png" alt="Flor">
       </div>
     </div>
@@ -846,7 +854,7 @@ footer {
   <section class="section-about" id="about">
     <div class="about-img-wrap">
       <div class="about-deco">CC</div>
-      <img src="./img/flor.png" alt="Flor">
+      <img src="./img/flor-y-orne.jpg" alt="Flor y Orne" style="object-fit:cover !important; object-position:center !important;">
     </div>
     <div class="about-content">
       <span class="section-tag">Quiénes somos</span>
@@ -902,7 +910,7 @@ footer {
         <div class="ev-meta">
           <div class="ev-meta-row"><span class="ev-meta-key">Cuándo</span><span class="ev-meta-val">Jueves 3 de julio · +18hs</span></div>
           <div class="ev-meta-row"><span class="ev-meta-key">Dónde</span><span class="ev-meta-val">Online · Link por email</span></div>
-          <div class="ev-meta-row"><span class="ev-meta-key">Costo</span><span class="ev-meta-val ev-mv acc">GRATIS</span></div>
+          <div class="ev-meta-row"><span class="ev-meta-key">Costo</span><span class="ev-meta-val ev-mv acc">SIN COSTO</span></div>
         </div>
       </div>
     </div>
@@ -917,7 +925,7 @@ footer {
       <input type="email" class="ev-input" placeholder="tu@email.com" aria-label="Email">
       <button class="ev-submit" onclick="handleHome(event)">Quiero estar ahí →</button>
     </div>
-    <p class="ev-nota">Gratis · Sin spam · Solo el link y la info del evento</p>
+    <p class="ev-nota">Sin costo · Sin spam · Solo el link y la info del evento</p>
   </section>
 
   <!-- EQUIPO -->
@@ -978,7 +986,7 @@ footer {
   <footer>
     <div class="footer-top">
       <div>
-        <img src="./img/logo.png" class="footer-logo" alt="Club Conecta">
+        <img src="./img/Logo-04.jpg" class="footer-logo" alt="Club Conecta">
         <p class="footer-tagline">Conexión. Transformación. Sin filtros. 2026</p>
       </div>
       <div>
@@ -1078,7 +1086,7 @@ footer {
   </div>
   <footer>
     <div class="footer-top">
-      <div><img src="./img/logo.png" class="footer-logo" alt="Club Conecta"><p class="footer-tagline">Conexión. Transformación. Sin filtros. 2026</p></div>
+      <div><img src="./img/Logo-04.jpg" class="footer-logo" alt="Club Conecta"><p class="footer-tagline">Conexión. Transformación. Sin filtros. 2026</p></div>
       <div><p class="footer-col-title">Navegá</p><div class="footer-col-links"><a href="#" onclick="showPage('home');return false;">Inicio</a><a href="#" onclick="showPage('blog');return false;">Blog</a><a href="#" onclick="showPage('podcast');return false;">Podcast</a></div></div>
       <div><p class="footer-col-title">Redes</p><div class="footer-col-links"><a href="#">Instagram</a><a href="#">YouTube</a><a href="#">Spotify</a></div></div>
       <div><p class="footer-col-title">Contacto</p><div class="footer-col-links"><a href="mailto:hola@clubconecta.com">hola@clubconecta.com</a></div></div>
@@ -1127,7 +1135,7 @@ footer {
   </div>
   <footer>
     <div class="footer-top">
-      <div><img src="./img/logo.png" class="footer-logo" alt="Club Conecta"><p class="footer-tagline">Conexión. Transformación. Sin filtros. 2026</p></div>
+      <div><img src="./img/Logo-04.jpg" class="footer-logo" alt="Club Conecta"><p class="footer-tagline">Conexión. Transformación. Sin filtros. 2026</p></div>
       <div><p class="footer-col-title">Navegá</p><div class="footer-col-links"><a href="#" onclick="showPage('home');return false;">Inicio</a><a href="#" onclick="showPage('blog');return false;">Blog</a><a href="#" onclick="showPage('podcast');return false;">Podcast</a></div></div>
       <div><p class="footer-col-title">Redes</p><div class="footer-col-links"><a href="#">Instagram</a><a href="#">YouTube</a><a href="#">Spotify</a></div></div>
       <div><p class="footer-col-title">Contacto</p><div class="footer-col-links"><a href="mailto:hola@clubconecta.com">hola@clubconecta.com</a></div></div>
@@ -1141,7 +1149,7 @@ footer {
   <div class="modal-box">
     <div class="modal-top">
       <h3>Reservá tu lugar</h3>
-      <p>Primer Encuentro · 3 julio 2026 · Gratis</p>
+      <p>Primer Encuentro · 3 julio 2026 · Sin costo</p>
       <button class="modal-close" onclick="closeModal()">✕</button>
     </div>
     <div class="modal-body" id="modal-body">
@@ -1151,7 +1159,7 @@ footer {
         <input type="email" class="modal-input" placeholder="tu@email.com" required aria-label="Email">
         <button type="button" onclick="handleModal(event)">Quiero estar ahí →</button>
       </div>
-      <p class="modal-nota">Gratis · Sin spam · Solo el link</p>
+      <p class="modal-nota">Sin costo · Sin spam · Solo el link</p>
     </div>
     <div class="success-block" id="success-block">
       <span class="success-icon">✓</span>
@@ -1208,6 +1216,54 @@ function updateCountdown() {
 }
 updateCountdown(); setInterval(updateCountdown, 1000);
 document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); });
+
+// Drag cards
+document.querySelectorAll('.draggable').forEach(el => {
+  let isDragging = false, startX, startY, origLeft, origTop;
+  // Store initial position
+  const style = window.getComputedStyle(el);
+  el.style.left = el.offsetLeft + 'px';
+  el.style.top = el.offsetTop + 'px';
+  el.style.right = 'auto';
+  el.style.bottom = 'auto';
+
+  el.addEventListener('mousedown', e => {
+    isDragging = true;
+    el.classList.add('dragging');
+    startX = e.clientX;
+    startY = e.clientY;
+    origLeft = parseInt(el.style.left);
+    origTop = parseInt(el.style.top);
+    e.preventDefault();
+  });
+  document.addEventListener('mousemove', e => {
+    if (!isDragging) return;
+    el.style.left = (origLeft + e.clientX - startX) + 'px';
+    el.style.top = (origTop + e.clientY - startY) + 'px';
+  });
+  document.addEventListener('mouseup', () => {
+    isDragging = false;
+    el.classList.remove('dragging');
+  });
+  // Touch support
+  el.addEventListener('touchstart', e => {
+    isDragging = true;
+    el.classList.add('dragging');
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+    origLeft = parseInt(el.style.left);
+    origTop = parseInt(el.style.top);
+  }, {passive:true});
+  document.addEventListener('touchmove', e => {
+    if (!isDragging) return;
+    el.style.left = (origLeft + e.touches[0].clientX - startX) + 'px';
+    el.style.top = (origTop + e.touches[0].clientY - startY) + 'px';
+  }, {passive:true});
+  document.addEventListener('touchend', () => {
+    isDragging = false;
+    el.classList.remove('dragging');
+  });
+});
 </script>
 </body>
 </html>
