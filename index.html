@@ -263,7 +263,7 @@ h1.hero-heading {
   position:relative;
   border-radius:24px; overflow:hidden;
   border:1.5px solid var(--borde-oscuro);
-  height:580px;
+  aspect-ratio:9/16; height:auto;
 }
 .about-img-wrap img {
   width:100%; height:100%;
@@ -1186,18 +1186,46 @@ function openModal() {
 }
 function closeModal() { document.getElementById('modal').classList.remove('open'); }
 function closeOut(e) { if (e.target.id === 'modal') closeModal(); }
+
+const ML_ACTION = 'https://assets.mailerlite.com/jsonp/432956/forms/189719107531179830/subscribe';
+
+async function submitToML(nombre, email) {
+  const fd = new FormData();
+  fd.append('fields[name]', nombre);
+  fd.append('fields[email]', email);
+  fd.append('ml-submit', '1');
+  fd.append('anticsrf', 'true');
+  try {
+    await fetch(ML_ACTION, { method:'POST', body:fd, mode:'no-cors' });
+  } catch(e) {}
+}
+
 function handleModal(e) {
   e.preventDefault();
+  var nombre = document.querySelector('#modal-form input[type="text"]').value;
+  var email = document.querySelector('#modal-form input[type="email"]').value;
+  if (!email) return;
+  submitToML(nombre, email);
   document.getElementById('modal-body').style.display = 'none';
   document.getElementById('success-block').style.display = 'block';
   setTimeout(closeModal, 3000);
 }
+
 function handleHome(e) {
   e.preventDefault();
+  var nombre = document.querySelector('#ev-home-form input[type="text"]').value;
+  var email = document.querySelector('#ev-home-form input[type="email"]').value;
+  if (!email) return;
+  submitToML(nombre, email);
   document.getElementById('ev-home-form').innerHTML = '<p style="color:var(--limon);font-size:14px;font-weight:700;padding:20px 0;">✓ ¡Genial! Te mandamos el link por email.</p>';
 }
+
 function handleNL(e) {
   e.preventDefault();
+  var nombre = document.querySelector('#bsw-form input[type="text"]').value;
+  var email = document.querySelector('#bsw-form input[type="email"]').value;
+  if (!email) return;
+  submitToML(nombre, email);
   document.getElementById('bsw-form').style.display = 'none';
   var ok = document.getElementById('bsw-ok');
   ok.style.display = 'block';
