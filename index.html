@@ -70,12 +70,11 @@ input,button,select,textarea { font-family:'Satoshi','Inter',sans-serif; cursor:
 @keyframes navFadeIn { from{opacity:0;transform:translateX(-50%) translateY(-20px)} to{opacity:1;transform:translateX(-50%) translateY(0)} }
 
 .nav-logo-pill {
-  width:36px; height:36px; border-radius:50%;
-  overflow:hidden; flex-shrink:0; cursor:pointer;
-  background:rgba(255,255,255,.1);
-  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0; cursor:pointer;
+  display:flex; align-items:center; padding:4px 10px;
+  background:#fff; border-radius:40px;
 }
-.nav-logo-pill img { height:20px; filter:brightness(0) invert(1); }
+.nav-logo-pill img { height:22px; display:block; }
 
 .nav-links { display:flex; align-items:center; gap:4px; }
 .nav-link {
@@ -156,7 +155,7 @@ h2.bauhaus {
 }
 
 h1.hero-heading {
-  font-family:'Anton',sans-serif; font-weight:400;
+  font-family:'Bauhaus'; font-weight:900;
   font-size:clamp(72px, 9vw, 120px);
   letter-spacing:-.02em; line-height:1em;
   color:var(--bosque);
@@ -165,7 +164,7 @@ h1.hero-heading {
 
 .hero-word-wrap { overflow:hidden; display:block; height:1.05em; }
 .hero-word {
-  font-family:'Anton',sans-serif;
+  font-family:'Bauhaus'; font-weight:900;
   color:var(--limon);
   display:block;
   animation:wordCycle 4s ease-in-out infinite, fadeUp .7s .4s ease both;
@@ -311,7 +310,7 @@ h1.hero-heading {
   margin-bottom:56px;
 }
 .pasos-header h2.bauhaus {
-  font-size:clamp(40px, 4.5vw, 68px);
+  font-size:clamp(48px, 5.5vw, 80px);
   color:var(--bosque); max-width:520px;
 }
 .steps { display:flex; flex-direction:column; }
@@ -854,7 +853,7 @@ footer {
   <section class="section-about" id="about">
     <div class="about-img-wrap">
       <div class="about-deco">CC</div>
-      <img src="./img/flor-y-orne.jpg" alt="Flor y Orne" style="object-fit:cover !important; object-position:center !important;">
+      <video src="./img/flor-y-orne-eventos.mp4" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;"></video>
     </div>
     <div class="about-content">
       <span class="section-tag">Quiénes somos</span>
@@ -870,7 +869,7 @@ footer {
       <div class="pasos-header">
         <div>
           <span class="section-tag dark">El hilo conductor</span>
-          <h2 class="bauhaus">¿Sentís que alguien<br>te va a descubrir?</h2>
+          <h2 class="bauhaus">¿Sentís que alguien te va a descubrir?</h2>
         </div>
         <button class="pill-btn bosque" onclick="openModal()">Sumarme al evento ↗</button>
       </div>
