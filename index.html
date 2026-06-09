@@ -543,6 +543,46 @@ footer {
 .footer-copy { font-size:11px; color:rgba(255,255,255,.25); }
 .footer-copy span { color:var(--limon); }
 
+/* ===== MOBILE MENU ===== */
+.mobile-menu {
+  display:none;
+  position:fixed; top:0; left:0; right:0;
+  background:var(--bosque);
+  z-index:500;
+  flex-direction:column;
+  align-items:center; justify-content:center;
+  gap:4px;
+  padding:48px 24px 36px;
+  border-radius:0 0 28px 28px;
+  box-shadow:0 8px 40px rgba(0,0,0,.3);
+}
+.mobile-menu.open { display:flex; }
+.mobile-menu-close {
+  position:absolute; top:16px; right:20px;
+  background:rgba(255,255,255,.1); border:none;
+  color:rgba(255,255,255,.7); font-size:18px;
+  width:36px; height:36px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer; transition:background .15s;
+}
+.mobile-menu-close:hover { background:rgba(255,255,255,.2); color:#fff; }
+.mobile-menu .nav-link {
+  font-family:'Bauhaus',sans-serif;
+  font-size:26px; font-weight:700;
+  color:rgba(255,255,255,.7);
+  background:none; border:none;
+  padding:12px 32px; border-radius:60px;
+  cursor:pointer; transition:background .15s, color .15s;
+  width:100%; text-align:center;
+}
+.mobile-menu .nav-link:hover { background:rgba(255,255,255,.1); color:#fff; }
+.mobile-menu-cta {
+  font-size:15px !important; padding:13px 32px !important;
+  margin-top:12px; background:var(--limon); color:var(--bosque);
+  border:none; border-radius:40px; font-weight:700; cursor:pointer;
+  width:100%;
+}
+
 /* ===== BLOG ===== */
 #page-blog { padding-top:80px; }
 .blog-hero {
@@ -802,7 +842,7 @@ footer {
 @media (max-width:768px) {
   #site-nav {
     width:calc(100% - 32px);
-    max-width:400px;
+    max-width:none;
     top:16px;
     padding:8px 12px;
     justify-content:space-between;
@@ -812,7 +852,7 @@ footer {
     display:flex; flex-direction:column;
     position:fixed; top:0; left:0; right:0; bottom:0;
     background:var(--bosque);
-    z-index:200;
+    z-index:250;
     align-items:center; justify-content:center;
     gap:8px;
     border-radius:0;
@@ -831,6 +871,7 @@ footer {
   .nav-hamburger {
     display:flex; flex-direction:column; gap:5px;
     background:none; border:none; cursor:pointer; padding:6px;
+    position:relative; z-index:300;
   }
   .nav-hamburger span {
     display:block; width:22px; height:2px;
@@ -897,6 +938,15 @@ footer {
     <span></span><span></span><span></span>
   </button>
 </nav>
+
+<!-- MOBILE MENU OVERLAY -->
+<div class="mobile-menu" id="mobile-menu">
+  <button class="mobile-menu-close" onclick="toggleMenu()" aria-label="Cerrar">✕</button>
+  <button class="nav-link" onclick="showPage('home');toggleMenu()">Inicio</button>
+  <button class="nav-link" onclick="showPage('blog');toggleMenu()">Blog</button>
+  <button class="nav-link" onclick="showPage('podcast');toggleMenu()">Podcast</button>
+  <button class="nav-cta mobile-menu-cta" onclick="openModal();toggleMenu()">Sumarme →</button>
+</div>
 
 <!-- ===================== HOME ===================== -->
 <div id="page-home" class="page active">
@@ -1249,11 +1299,11 @@ footer {
 
 <script>
 function toggleMenu() {
-  var links = document.getElementById('nav-links');
+  var menu = document.getElementById('mobile-menu');
   var btn = document.getElementById('nav-hamburger');
-  links.classList.toggle('open');
+  menu.classList.toggle('open');
   btn.classList.toggle('open');
-  document.body.style.overflow = links.classList.contains('open') ? 'hidden' : '';
+  document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
 }
 
 function showPage(n) {
@@ -1264,9 +1314,9 @@ function showPage(n) {
   var el = document.getElementById(map[n]);
   if (el) el.classList.add('active');
   // close mobile menu
-  var links = document.getElementById('nav-links');
+  var menu = document.getElementById('mobile-menu');
   var btn = document.getElementById('nav-hamburger');
-  if (links) links.classList.remove('open');
+  if (menu) menu.classList.remove('open');
   if (btn) btn.classList.remove('open');
   document.body.style.overflow = '';
   window.scrollTo(0,0);
