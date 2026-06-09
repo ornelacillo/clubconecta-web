@@ -3,8 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Club Conecta — Comunidad de mujeres que crecen sin pedir permiso</title>
+<title>Club Conecta — Comunidad de mujeres emprendedoras | Rosario, Argentina</title>
+<meta name="description" content="Club Conecta es una comunidad de mujeres emprendedoras que trabajan su síndrome de la impostora, se conectan y crecen juntas. Podcast, blog y eventos online. Fundado por Flor y Orne en Rosario.">
+<meta name="keywords" content="club conecta, mujeres emprendedoras, síndrome de la impostora, comunidad mujeres, rosario argentina, podcast mujeres, emprendimiento femenino, desarrollo personal mujeres">
+<meta name="author" content="Club Conecta — Flor y Orne">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.clubconecta.com.ar/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.clubconecta.com.ar/">
+<meta property="og:title" content="Club Conecta — Comunidad de mujeres que crecen sin pedir permiso">
+<meta property="og:description" content="Un espacio para mujeres que dejaron de pedir permiso a la duda. Podcast, blog y eventos online. Siempre lo estuviste.">
+<meta property="og:image" content="https://www.clubconecta.com.ar/img/og-image.jpg">
+<meta property="og:locale" content="es_AR">
+<meta property="og:site_name" content="Club Conecta">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Club Conecta — Mujeres que crecen sin pedir permiso">
+<meta name="twitter:description" content="Comunidad de mujeres emprendedoras. Podcast, blog y eventos online.">
+<meta name="twitter:image" content="https://www.clubconecta.com.ar/img/og-image.jpg">
 <link rel="icon" type="image/png" href="./favicon.png">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G3674FZWMX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G3674FZWMX');
+</script>
+<!-- Schema.org structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Club Conecta",
+  "url": "https://www.clubconecta.com.ar",
+  "logo": "https://www.clubconecta.com.ar/img/Logo-04.png",
+  "description": "Comunidad de mujeres emprendedoras que trabajan su síndrome de la impostora y crecen juntas.",
+  "foundingLocation": {"@type": "Place", "name": "Rosario, Argentina"},
+  "sameAs": ["https://www.instagram.com/clubconecta"],
+  "founders": [
+    {"@type": "Person", "name": "Florencia"},
+    {"@type": "Person", "name": "Ornela"}
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -97,6 +138,7 @@ input,button,select,textarea { font-family:'Satoshi','Inter',sans-serif; cursor:
 }
 .nav-cta:hover { background:#c8dc3e; }
 .nav-mobile-cta { display:none; }
+.nav-hamburger { display:none; }
 
 /* ===== SHARED ===== */
 .section-tag {
@@ -758,9 +800,47 @@ footer {
 }
 
 @media (max-width:768px) {
-  #site-nav { width:calc(100% - 32px); max-width:340px; top:16px; padding:6px 8px; }
+  #site-nav {
+    width:calc(100% - 32px);
+    max-width:400px;
+    top:16px;
+    padding:8px 12px;
+    justify-content:space-between;
+  }
   .nav-links { display:none; }
-  .nav-mobile-cta { display:block; }
+  .nav-links.open {
+    display:flex; flex-direction:column;
+    position:fixed; top:0; left:0; right:0; bottom:0;
+    background:var(--bosque);
+    z-index:200;
+    align-items:center; justify-content:center;
+    gap:8px;
+    border-radius:0;
+  }
+  .nav-links.open .nav-link {
+    font-size:28px; font-weight:700; color:rgba(255,255,255,.7);
+    padding:16px 32px; border-radius:60px;
+    font-family:'Bauhaus',sans-serif;
+  }
+  .nav-links.open .nav-link.active,
+  .nav-links.open .nav-link:hover { background:rgba(255,255,255,.1); color:#fff; }
+  .nav-links.open .nav-cta {
+    font-size:16px; padding:14px 32px; margin-top:16px;
+  }
+  .nav-mobile-cta { display:none; }
+  .nav-hamburger {
+    display:flex; flex-direction:column; gap:5px;
+    background:none; border:none; cursor:pointer; padding:6px;
+  }
+  .nav-hamburger span {
+    display:block; width:22px; height:2px;
+    background:rgba(255,255,255,.8); border-radius:2px;
+    transition:all .2s;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform:rotate(45deg) translate(5px,5px); }
+  .nav-hamburger.open span:nth-child(2) { opacity:0; }
+  .nav-hamburger.open span:nth-child(3) { transform:rotate(-45deg) translate(5px,-5px); }
+}
 
   .hero { padding:80px 20px 48px; }
   h1.hero-heading { font-size:clamp(52px,14vw,80px); }
@@ -808,13 +888,15 @@ footer {
   <div class="nav-logo-pill" onclick="showPage('home')" title="Club Conecta">
     <img src="./img/Logo-04.png" alt="Club Conecta">
   </div>
-  <div class="nav-links">
+  <div class="nav-links" id="nav-links">
     <button class="nav-link active" id="nav-home" onclick="showPage('home')">Inicio</button>
     <button class="nav-link" id="nav-blog" onclick="showPage('blog')">Blog</button>
     <button class="nav-link" id="nav-podcast" onclick="showPage('podcast')">Podcast</button>
     <button class="nav-cta" onclick="openModal()">Sumarme →</button>
   </div>
-  <button class="nav-mobile-cta nav-cta" onclick="openModal()">03 jul →</button>
+  <button class="nav-hamburger" id="nav-hamburger" onclick="toggleMenu()" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- ===================== HOME ===================== -->
@@ -939,16 +1021,16 @@ footer {
         <div class="equipo-card"><img src="./img/flor.png" alt="Flor"></div>
         <div class="equipo-info">
           <div class="eq-nombre">Flor.</div>
-          <div class="eq-rol">Ilustradora · Estratega creativa</div>
-          <p class="eq-bio">Apasionada por impulsar a mujeres a través del arte y el desarrollo personal. Cree que la transformación empieza cuando dejás de pedir permiso para ocupar tu lugar.</p>
+          <div class="eq-rol">Diseñadora gráfica · Estratega creativa · Artista</div>
+          <p class="eq-bio">Soy diseñadora, artista y marketinera. Entreno personas en el sector empresarial sin perder de vista lo humano. Me apasionan la escritura, el desarrollo personal y la libertad de mostrarnos tal cual somos. Creo que la transformación empieza cuando dejás de pedir permiso para ocupar tu lugar.</p>
         </div>
       </div>
       <div>
         <div class="equipo-card"><img src="./img/orne.png" alt="Orne"></div>
         <div class="equipo-info">
           <div class="eq-nombre">Orne.</div>
-          <div class="eq-rol">Creativa · Diseñadora gráfica</div>
-          <p class="eq-bio">Convencida de que lo visual transforma cómo nos vemos a nosotras mismas. Guía procesos creativos donde las texturas y el diseño se vuelven herramientas de autoconocimiento.</p>
+          <div class="eq-rol">Diseñadora gráfica · Creativa · Facilitadora visual</div>
+          <p class="eq-bio">Soy diseñadora gráfica y diseñadora web. Convierto ideas en identidades visuales con carácter y guío procesos creativos donde las texturas, el color y el diseño se vuelven herramientas de autoconocimiento. Estoy convencida de que lo visual transforma cómo nos vemos a nosotras mismas.</p>
         </div>
       </div>
     </div>
@@ -1047,12 +1129,9 @@ footer {
         </div>
       </div>
       <div class="blog-list">
-        <div class="bl-item"><span class="bl-tag">Transformación</span><div class="bl-title">Listas para empezar — las mentiras que nos contamos</div><div class="bl-desc">Sobre esperar el momento perfecto que nunca llega.</div></div>
+        <div class="bl-item"><span class="bl-tag">Síndrome de la impostora</span><div class="bl-title">Listas para empezar — las mentiras que nos contamos</div><div class="bl-desc">Sobre esperar el momento perfecto que nunca llega.</div></div>
         <div class="bl-item"><span class="bl-tag">Conexión</span><div class="bl-title">Cuando otra mujer te ve de verdad</div><div class="bl-desc">Lo que pasa cuando dejamos de competir y empezamos a sostener.</div></div>
-        <div class="bl-item"><span class="bl-tag">Síndrome</span><div class="bl-title">Me da miedo pedir más — y sé exactamente por qué</div><div class="bl-desc">Un análisis honesto del miedo a ocupar espacio.</div></div>
-        <div class="bl-item"><span class="bl-tag">Desarrollo</span><div class="bl-title">Construir sin que el miedo construya por vos</div><div class="bl-desc">Estrategias concretas para mujeres que van en serio.</div></div>
-        <div class="bl-item"><span class="bl-tag">Transformación</span><div class="bl-title">El día que decidí que ya era suficiente</div><div class="bl-desc">Una historia real sobre el punto de inflexión.</div></div>
-        <div class="bl-item"><span class="bl-tag">Arte</span><div class="bl-title">Texturas, pigmentos y lo que revelan de nosotras</div><div class="bl-desc">El arte como herramienta de autoconocimiento.</div></div>
+        <div class="bl-item"><span class="bl-tag">Desarrollo personal</span><div class="bl-title">Construir sin que el miedo construya por vos</div><div class="bl-desc">Estrategias concretas para mujeres que van en serio.</div></div>
       </div>
     </div>
     <div class="blog-sidebar">
@@ -1170,6 +1249,14 @@ footer {
 </div>
 
 <script>
+function toggleMenu() {
+  var links = document.getElementById('nav-links');
+  var btn = document.getElementById('nav-hamburger');
+  links.classList.toggle('open');
+  btn.classList.toggle('open');
+  document.body.style.overflow = links.classList.contains('open') ? 'hidden' : '';
+}
+
 function showPage(n) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById('page-' + n).classList.add('active');
@@ -1177,6 +1264,12 @@ function showPage(n) {
   var map = {home:'nav-home',blog:'nav-blog',podcast:'nav-podcast'};
   var el = document.getElementById(map[n]);
   if (el) el.classList.add('active');
+  // close mobile menu
+  var links = document.getElementById('nav-links');
+  var btn = document.getElementById('nav-hamburger');
+  if (links) links.classList.remove('open');
+  if (btn) btn.classList.remove('open');
+  document.body.style.overflow = '';
   window.scrollTo(0,0);
 }
 function openModal() {
