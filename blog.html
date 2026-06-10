@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Club Conecta</title>
+<meta name="description" content="Reflexiones para mujeres que van en serio. Sin filtros, sin perfeccionismo. Artículos sobre síndrome de la impostora, transformación y comunidad.">
+<meta name="keywords" content="blog mujeres emprendedoras, síndrome de la impostora, transformación personal, Club Conecta">
+<meta name="author" content="Club Conecta — Flor y Orne">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.clubconecta.com.ar/blog">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.clubconecta.com.ar/blog">
+<meta property="og:title" content="Blog — Club Conecta">
+<meta property="og:description" content="Reflexiones para mujeres que van en serio. Sin filtros, sin perfeccionismo.">
+<meta property="og:image" content="https://www.clubconecta.com.ar/img/SIS-001-menta-blog.png">
+<meta property="og:locale" content="es_AR">
+<meta property="og:site_name" content="Club Conecta">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Blog — Club Conecta">
+<meta name="twitter:description" content="Reflexiones para mujeres que van en serio.">
+<meta name="twitter:image" content="https://www.clubconecta.com.ar/img/SIS-001-menta-blog.png">
+<link rel="icon" type="image/png" href="./favicon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G3674FZWMX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-G3674FZWMX');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+<style>
+@font-face { font-family:'Satoshi'; src:url('https://framerusercontent.com/third-party-assets/fontshare/wf/TTX2Z3BF3P6Y5BQT3IV2VNOK6FL22KUT/7QYRJOI3JIMYHGY6CH7SOIFRQLZOLNJ6/KFIAZD4RUMEZIYV6FQ3T3GP5PDBDB6JY.woff2') format('woff2'); font-weight:400; font-display:swap; }
+@font-face { font-family:'Satoshi'; src:url('https://framerusercontent.com/third-party-assets/fontshare/wf/P2LQKHE6KA6ZP4AAGN72KDWMHH6ZH3TA/ZC32TK2P7FPS5GFTL46EU6KQJA24ZYDB/7AHDUZ4A7LFLVFUIFSARGIWCRQJHISQP.woff2') format('woff2'); font-weight:500; font-display:swap; }
+@font-face { font-family:'Satoshi'; src:url('https://framerusercontent.com/third-party-assets/fontshare/wf/LAFFD4SDUCDVQEXFPDC7C53EQ4ZELWQI/PXCT3G6LO6ICM5I3NTYENYPWJAECAWDD/GHM6WVH6MILNYOOCXHXB5GTSGNTMGXZR.woff2') format('woff2'); font-weight:700; font-display:swap; }
+@font-face { font-family:'Bauhaus'; src:url('./fonts/ITC_Bauhaus_Heavy.ttf') format('truetype'); font-weight:900; font-display:swap; }
+@font-face { font-family:'Bauhaus'; src:url('./fonts/ITC_Bauhaus_Bold.ttf') format('truetype'); font-weight:700; font-display:swap; }
+@font-face { font-family:'Bauhaus'; src:url('./fonts/ITC_Bauhaus_Light.ttf') format('truetype'); font-weight:300; font-display:swap; }
+:root { --bosque:#063d30; --crema:#fafafa; --limon:#D4E84A; --salvia:#4a7c6f; --borde-claro:rgba(6,61,48,.15); --texto:#063d30; --gris:rgba(6,61,48,.55); }
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body { font-family:'Satoshi','Inter',sans-serif; font-weight:400; background:var(--crema); color:var(--texto); overflow-x:hidden; -webkit-font-smoothing:antialiased; }
+body::before { content:''; position:fixed; inset:0; z-index:0; pointer-events:none; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E"); opacity:.04; }
+a { color:inherit; text-decoration:none; }
+img { display:block; }
+input,button { font-family:'Satoshi','Inter',sans-serif; cursor:pointer; }
+
+/* NAV */
+#site-nav { position:fixed; top:24px; left:50%; transform:translateX(-50%); z-index:100; background:var(--bosque); border-radius:60px; padding:8px 10px; display:flex; align-items:center; gap:4px; width:max-content; }
+.nav-logo-pill { flex-shrink:0; cursor:pointer; display:flex; align-items:center; padding:0 6px; }
+.nav-logo-pill img { height:26px; display:block; }
+.nav-links { display:flex; align-items:center; gap:4px; }
+.nav-link { font-size:14px; font-weight:500; letter-spacing:-.01em; color:rgba(255,255,255,.75); background:none; border:none; padding:7px 14px; border-radius:40px; transition:background .15s, color .15s; cursor:pointer; white-space:nowrap; text-decoration:none; display:inline-block; }
+.nav-link:hover { background:rgba(255,255,255,.1); color:#fff; }
+.nav-link.active { background:var(--crema); color:var(--bosque); }
+.nav-cta { font-size:13px; font-weight:700; color:var(--bosque); background:var(--limon); border:none; padding:8px 18px; border-radius:40px; transition:background .15s; cursor:pointer; white-space:nowrap; margin-left:4px; }
+.nav-cta:hover { background:#c8dc3e; }
+.nav-hamburger { display:none; }
+
+/* MOBILE MENU */
+.mobile-menu { display:none; position:fixed; top:0; left:0; right:0; background:var(--bosque); z-index:500; flex-direction:column; align-items:center; justify-content:center; gap:4px; padding:48px 24px 36px; border-radius:0 0 28px 28px; box-shadow:0 8px 40px rgba(0,0,0,.3); }
+.mobile-menu.open { display:flex; }
+.mobile-menu-close { position:absolute; top:16px; right:20px; background:rgba(255,255,255,.1); border:none; color:rgba(255,255,255,.7); font-size:18px; width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; }
+.mobile-menu a { font-family:'Bauhaus',sans-serif; font-size:26px; font-weight:700; color:rgba(255,255,255,.7); padding:12px 32px; border-radius:60px; cursor:pointer; width:100%; text-align:center; display:block; }
+.mobile-menu a:hover { background:rgba(255,255,255,.1); color:#fff; }
+.mobile-menu-cta { font-size:15px !important; padding:13px 32px !important; margin-top:12px; background:var(--limon); color:var(--bosque); border:none; border-radius:40px; font-weight:700; cursor:pointer; width:100%; }
+
+/* PAGE */
+.page-wrap { padding-top:80px; }
+
+/* BLOG HERO */
+.blog-hero { padding:40px 80px 0; background:var(--crema); }
+.blog-hero-title { font-family:'Bauhaus'; font-weight:900; font-size:clamp(72px, 13vw, 160px); letter-spacing:-.04em; line-height:.85; color:var(--bosque); white-space:nowrap; }
+.blog-hero-title .outline { color:transparent; -webkit-text-stroke:3px var(--bosque); }
+.blog-meta-row { display:grid; grid-template-columns:1fr; border-top:1px solid var(--borde-claro); margin-top:24px; }
+.blog-meta-left { font-size:14px; font-weight:400; color:var(--gris); padding:20px 0; }
+
+/* BLOG LAYOUT */
+.blog-layout { display:grid; grid-template-columns:1fr 280px; background:var(--crema); padding:0 80px 80px; }
+.blog-main { padding-right:48px; border-right:1px solid var(--borde-claro); padding-top:48px; }
+.bfb { display:grid; grid-template-columns:1fr 1fr; gap:2px; border:1.5px solid var(--borde-claro); border-radius:20px; overflow:hidden; margin-bottom:40px; cursor:pointer; transition:border-color .15s; }
+.bfb:hover { border-color:var(--salvia); }
+.bfb-img { background:var(--bosque); min-height:280px; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+.bfb-img img { width:100%; height:100%; object-fit:cover; display:block; }
+.bfb-body { padding:32px; background:var(--crema); }
+.bfb-tag { font-size:9px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--salvia); margin-bottom:12px; display:block; }
+.bfb-title { font-family:'Bauhaus'; font-weight:700; font-size:clamp(17px,2vw,24px); letter-spacing:-.02em; color:var(--bosque); margin-bottom:12px; transition:color .15s; }
+.bfb:hover .bfb-title { color:var(--salvia); }
+.bfb-desc { font-size:13px; font-weight:400; color:var(--gris); line-height:1.65; }
+.blog-list { border-top:1px solid var(--borde-claro); }
+.bl-item { padding:20px 0; border-bottom:1px solid var(--borde-claro); cursor:pointer; transition:padding-left .15s; display:grid; grid-template-columns:120px 1fr; gap:16px; align-items:start; }
+.bl-item:hover { padding-left:8px; }
+.bl-item-img { width:120px; aspect-ratio:16/9; border-radius:8px; overflow:hidden; }
+.bl-item-img img { width:100%; height:100%; object-fit:cover; display:block; }
+.bl-item-body { display:flex; flex-direction:column; gap:4px; }
+.bl-tag { font-size:9px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--salvia); margin-bottom:6px; display:block; }
+.bl-title { font-family:'Bauhaus'; font-weight:700; font-size:17px; letter-spacing:-.01em; color:var(--bosque); margin-bottom:4px; }
+.bl-desc { font-size:14px; font-weight:400; color:var(--gris); line-height:1.6; }
+.blog-sidebar { padding:48px 0 0 40px; }
+.bsw { margin-bottom:40px; padding-bottom:40px; border-bottom:1px solid var(--borde-claro); }
+.bsw-label { font-size:9px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--gris); margin-bottom:10px; display:block; }
+.bsw-date { font-family:'Bauhaus'; font-weight:900; font-size:38px; color:var(--salvia); letter-spacing:-.02em; display:block; margin-bottom:6px; }
+.bsw-frase { font-size:12px; font-style:italic; color:var(--gris); margin-bottom:14px; line-height:1.5; }
+.bsw-temas { display:flex; flex-direction:column; }
+.bsw-tema { display:flex; justify-content:space-between; padding:9px 0; border-bottom:1px solid var(--borde-claro); font-size:12px; color:var(--texto); cursor:pointer; transition:color .15s; }
+.bsw-tema:hover { color:var(--salvia); }
+.bsw-tema-count { color:rgba(6,61,48,.25); font-size:11px; }
+.bsw-nl-form { display:flex; flex-direction:column; gap:6px; margin-top:14px; }
+.bsw-input { width:100%; padding:10px 14px; background:rgba(6,61,48,.04); border:1.5px solid var(--borde-claro); border-radius:10px; font-size:13px; color:var(--texto); outline:none; transition:border-color .15s; font-family:'Satoshi',sans-serif; }
+.bsw-input:focus { border-color:var(--salvia); background:#fff; }
+.bsw-btn { width:100%; padding:11px; background:var(--bosque); color:var(--crema); border:none; border-radius:10px; font-size:12px; font-weight:700; transition:background .15s; cursor:pointer; }
+.bsw-btn:hover { background:var(--salvia); }
+.bsw-ok { display:none; font-size:13px; font-weight:700; color:var(--salvia); margin-top:8px; }
+
+/* FOOTER */
+footer { background:var(--bosque); padding:60px 80px 36px; }
+.footer-top { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:48px; margin-bottom:48px; }
+.footer-logo { height:20px; filter:brightness(0) invert(1); margin-bottom:16px; display:block; }
+.footer-tagline { font-size:13px; color:rgba(255,255,255,.35); line-height:1.7; }
+.footer-col-title { font-size:9px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.25); margin-bottom:16px; }
+.footer-col-links { display:flex; flex-direction:column; gap:10px; }
+.footer-col-links a { font-size:13px; color:rgba(255,255,255,.45); transition:color .15s; }
+.footer-col-links a:hover { color:var(--crema); }
+.footer-bot { border-top:1px solid rgba(255,255,255,.07); padding-top:28px; display:flex; justify-content:space-between; }
+.footer-copy { font-size:11px; color:rgba(255,255,255,.25); }
+.footer-copy span { color:var(--limon); }
+
+/* MODAL */
+.modal-overlay { position:fixed; inset:0; background:rgba(6,25,15,.9); z-index:200; display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:opacity .2s; padding:20px; }
+.modal-overlay.open { opacity:1; pointer-events:all; }
+.modal-box { background:var(--crema); max-width:500px; width:100%; border-radius:24px; border:1.5px solid var(--borde-claro); position:relative; overflow:hidden; }
+.modal-top { background:var(--bosque); padding:28px 32px; position:relative; }
+.modal-top h3 { font-family:'Bauhaus'; font-weight:900; font-size:24px; color:var(--crema); letter-spacing:-.02em; margin-bottom:4px; }
+.modal-top p { font-size:11px; color:rgba(255,255,255,.45); text-transform:uppercase; letter-spacing:.08em; }
+.modal-close { position:absolute; top:12px; right:16px; background:none; border:none; font-size:22px; color:rgba(255,255,255,.4); cursor:pointer; }
+.modal-close:hover { color:var(--crema); }
+.modal-body { padding:28px 32px; }
+.modal-frase { font-size:13px; font-style:italic; color:var(--gris); margin-bottom:20px; line-height:1.6; }
+.modal-form { display:flex; flex-direction:column; gap:8px; }
+.modal-input { padding:13px 16px; background:rgba(6,61,48,.05); border-radius:12px; border:1.5px solid var(--borde-claro); font-size:14px; color:var(--texto); outline:none; transition:border-color .15s; font-family:'Satoshi',sans-serif; }
+.modal-input:focus { border-color:var(--salvia); }
+.modal-form button { font-family:'Bauhaus'; font-weight:900; font-size:11px; letter-spacing:.15em; text-transform:uppercase; padding:15px; background:var(--bosque); color:var(--crema); border:none; border-radius:12px; transition:background .15s; cursor:pointer; }
+.modal-form button:hover { background:var(--salvia); }
+.modal-nota { font-size:10px; color:var(--gris); text-align:center; margin-top:12px; }
+.success-block { padding:40px 32px; text-align:center; display:none; }
+.success-icon { font-family:'Bauhaus'; font-weight:900; font-size:60px; color:var(--salvia); display:block; margin-bottom:12px; }
+.success-block h3 { font-family:'Bauhaus'; font-weight:900; font-size:22px; color:var(--bosque); margin-bottom:8px; }
+.success-block p { font-size:13px; color:var(--gris); }
+
+/* RESPONSIVE */
+@media (max-width:768px) {
+  #site-nav { width:calc(100% - 32px); max-width:none; top:16px; padding:8px 12px; justify-content:space-between; }
+  .nav-links { display:none; }
+  .nav-hamburger { display:flex; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:6px; position:relative; z-index:300; }
+  .nav-hamburger span { display:block; width:22px; height:2px; background:rgba(255,255,255,.8); border-radius:2px; transition:all .2s; }
+  .nav-hamburger.open span:nth-child(1) { transform:rotate(45deg) translate(5px,5px); }
+  .nav-hamburger.open span:nth-child(2) { opacity:0; }
+  .nav-hamburger.open span:nth-child(3) { transform:rotate(-45deg) translate(5px,-5px); }
+  .blog-hero { padding:28px 20px 0; }
+  .blog-hero-title { white-space:normal; font-size:clamp(56px,15vw,90px); }
+  .blog-meta-row { grid-template-columns:1fr; }
+  .blog-layout { grid-template-columns:1fr; padding:0 20px 48px; }
+  .blog-main { padding-right:0; border-right:none; padding-top:32px; }
+  .blog-sidebar { padding:32px 0 0; }
+  .bfb { grid-template-columns:1fr; }
+  .bl-item { grid-template-columns:90px 1fr; gap:12px; }
+  .bl-item-img { width:90px; }
+  footer { padding:48px 20px 28px; }
+  .footer-top { grid-template-columns:1fr 1fr; gap:28px; }
+  .footer-bot { flex-direction:column; gap:8px; text-align:center; }
+}
+@media (max-width:480px) { .footer-top { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<nav id="site-nav">
+  <div class="nav-logo-pill"><a href="/"><img src="./img/Logo-04.png" alt="Club Conecta"></a></div>
+  <div class="nav-links">
+    <a class="nav-link" href="/">Inicio</a>
+    <a class="nav-link active" href="/blog">Blog</a>
+    <a class="nav-link" href="/podcast">Podcast</a>
+    <button class="nav-cta" onclick="openModal()">Sumarme →</button>
+  </div>
+  <button class="nav-hamburger" id="nav-hamburger" onclick="toggleMenu()" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <button class="mobile-menu-close" onclick="toggleMenu()">✕</button>
+  <a href="/">Inicio</a>
+  <a href="/blog">Blog</a>
+  <a href="/podcast">Podcast</a>
+  <button class="mobile-menu-cta" onclick="openModal();toggleMenu()">Sumarme →</button>
+</div>
+
+<div class="page-wrap">
+  <div class="blog-hero">
+    <div class="blog-hero-title">BLOG <span class="outline">IDEAS.</span></div>
+    <div class="blog-meta-row">
+      <div class="blog-meta-left">Reflexiones para mujeres que van en serio. Sin filtros, sin perfeccionismo. Cada artículo es una conversación real.</div>
+    </div>
+  </div>
+  <div class="blog-layout">
+    <div class="blog-main">
+      <div class="bfb" onclick="window.location='/blog/sindrome-impostora'" style="cursor:pointer">
+        <div class="bfb-img"><img src="./img/SIS-001-menta-blog.png" alt="Sé perfectamente lo que hago"></div>
+        <div class="bfb-body">
+          <span class="bfb-tag">Síndrome de la impostora</span>
+          <div class="bfb-title">Sé perfectamente lo que hago. Entonces, ¿por qué sigo esperando que alguien me descubra?</div>
+          <p class="bfb-desc">Podemos ser expertas en resolver problemas para otros, pero extremadamente exigentes cuando se trata de reconocer nuestro propio valor.</p>
+        </div>
+      </div>
+      <div class="blog-list">
+        <div class="bl-item" onclick="window.location='/blog/sindrome-no-desaparece'" style="cursor:pointer">
+          <div class="bl-item-img"><img src="./img/SIS-002-limon-blog.png" alt="El síndrome de la impostora no desaparece"></div>
+          <div class="bl-item-body">
+            <span class="bl-tag">Síndrome de la impostora</span>
+            <div class="bl-title">El síndrome de la impostora no desaparece cuando tenés éxito. Cambia de forma.</div>
+            <div class="bl-desc">Muchas mujeres esperan un punto de llegada donde el miedo desaparece. Pero la voz no se va con el éxito: muta, crece y se adapta.</div>
+          </div>
+        </div>
+        <div class="bl-item" onclick="window.location='/blog/dejar-de-prepararme'" style="cursor:pointer">
+          <div class="bl-item-img"><img src="./img/SIS-003-salvia-blog.png" alt="El momento en que dejé de prepararme para vivir"></div>
+          <div class="bl-item-body">
+            <span class="bl-tag">Transformación</span>
+            <div class="bl-title">El momento en que dejé de prepararme para vivir y empecé a vivir.</div>
+            <div class="bl-desc">Lo que llamamos preparación muchas veces es miedo disfrazado. La historia detrás del regreso de Club Conecta.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="blog-sidebar">
+      <div class="bsw">
+        <span class="bsw-label">Próximo evento</span>
+        <span class="bsw-date">03 JUL</span>
+        <p class="bsw-frase">¿Qué pasa cuando dejás de esperar estar lista?</p>
+        <button class="pill-btn bosque" style="display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border-radius:60px;font-size:13px;font-weight:700;cursor:pointer;background:var(--bosque);color:var(--crema);border:none;" onclick="openModal()">Reservar →</button>
+      </div>
+      <div class="bsw">
+        <span class="bsw-label">Temas</span>
+        <div class="bsw-temas">
+          <div class="bsw-tema"><span>Síndrome de la impostora</span><span class="bsw-tema-count">02</span></div>
+          <div class="bsw-tema"><span>Transformación</span><span class="bsw-tema-count">01</span></div>
+        </div>
+      </div>
+      <div class="bsw" style="border-bottom:none">
+        <span class="bsw-label">Newsletter</span>
+        <p class="bsw-frase">Reflexiones cada semana. Sin ruido.</p>
+        <div class="bsw-nl-form" id="bsw-form">
+          <input type="text" class="bsw-input" placeholder="Tu nombre" aria-label="Nombre">
+          <input type="email" class="bsw-input" placeholder="tu@email.com" aria-label="Email">
+          <button class="bsw-btn" onclick="handleNL(event)">Suscribirme →</button>
+        </div>
+        <p class="bsw-ok" id="bsw-ok">✓ Suscripta.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div><img src="./img/Logo-04.png" class="footer-logo" alt="Club Conecta"><p class="footer-tagline">Conexión. Transformación. Sin filtros. 2026</p></div>
+    <div><p class="footer-col-title">Navegá</p><div class="footer-col-links"><a href="/">Inicio</a><a href="/blog">Blog</a><a href="/podcast">Podcast</a></div></div>
+    <div><p class="footer-col-title">Redes</p><div class="footer-col-links"><a href="https://instagram.com/hola.clubconecta" target="_blank">Instagram</a></div></div>
+    <div><p class="footer-col-title">Contacto</p><div class="footer-col-links"><a href="mailto:hola@clubconecta.com.ar">hola@clubconecta.com.ar</a></div></div>
+  </div>
+  <div class="footer-bot"><p class="footer-copy">© 2026 Club Conecta — <span>Flor + Orne</span></p><p class="footer-copy">Conexión. Transformación.</p></div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal" onclick="closeOut(event)">
+  <div class="modal-box">
+    <div class="modal-top">
+      <h3>Reservá tu lugar</h3>
+      <p>Primer Encuentro · 3 julio 2026 · Sin costo</p>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body" id="modal-body">
+      <p class="modal-frase">¿Qué pasa cuando dejás de esperar estar lista? — Una noche online, sin filtros.</p>
+      <div class="modal-form" id="modal-form">
+        <input type="text" class="modal-input" placeholder="Tu nombre" required aria-label="Nombre">
+        <input type="email" class="modal-input" placeholder="tu@email.com" required aria-label="Email">
+        <button type="button" onclick="handleModal(event)">Quiero estar ahí →</button>
+      </div>
+      <p class="modal-nota">Sin costo · Sin spam · Solo el link</p>
+    </div>
+    <div class="success-block" id="success-block">
+      <span class="success-icon">✓</span>
+      <h3>¡Ya estás adentro!</h3>
+      <p>Te enviamos los detalles por email. Nos vemos el 3 de julio.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleMenu() {
+  var menu = document.getElementById('mobile-menu');
+  var btn = document.getElementById('nav-hamburger');
+  menu.classList.toggle('open');
+  btn.classList.toggle('open');
+  document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+}
+function openModal() {
+  document.getElementById('modal').classList.add('open');
+  document.getElementById('modal-form').style.display = 'flex';
+  document.getElementById('success-block').style.display = 'none';
+  document.getElementById('modal-body').style.display = 'block';
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function closeOut(e) { if (e.target === document.getElementById('modal')) closeModal(); }
+function handleModal(e) {
+  e.preventDefault();
+  var inputs = document.querySelectorAll('.modal-input');
+  var name = inputs[0].value.trim();
+  var email = inputs[1].value.trim();
+  if (!name || !email) return;
+  var fd = new FormData();
+  fd.append('fields[name]', name);
+  fd.append('fields[email]', email);
+  fd.append('ml-submit', '1');
+  fetch('https://assets.mailerlite.com/jsonp/432956/forms/118209537747896640/subscribe', { method:'POST', body:fd, mode:'no-cors' });
+  document.getElementById('modal-form').style.display = 'none';
+  document.getElementById('modal-body').style.display = 'none';
+  document.getElementById('success-block').style.display = 'block';
+}
+function handleNL(e) {
+  e.preventDefault();
+  var name = document.querySelector('#bsw-form input[type=text]').value.trim();
+  var email = document.querySelector('#bsw-form input[type=email]').value.trim();
+  if (!name || !email) return;
+  var fd = new FormData();
+  fd.append('fields[name]', name);
+  fd.append('fields[email]', email);
+  fd.append('ml-submit', '1');
+  fetch('https://assets.mailerlite.com/jsonp/432956/forms/118209537747896640/subscribe', { method:'POST', body:fd, mode:'no-cors' });
+  document.getElementById('bsw-form').style.display = 'none';
+  document.getElementById('bsw-ok').style.display = 'block';
+}
+</script>
+</body>
+</html>
