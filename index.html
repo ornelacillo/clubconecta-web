@@ -716,6 +716,11 @@ footer {
 }
 .pod-plat:last-child { border-right:1.5px solid var(--borde-claro); }
 .pod-plat:hover { border-color:var(--bosque); }
+.pod-plat.active { background:var(--bosque); color:var(--crema); border-color:var(--bosque); }
+.pod-tab-content { padding:48px 80px 60px; background:var(--crema); }
+.pod-embeds { display:flex; flex-direction:column; gap:16px; max-width:800px; }
+.pod-yt-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; max-width:100%; }
+.pod-yt-grid iframe { width:100%; height:200px; border-radius:12px; }
 .pod-meta-right { padding:20px 0 20px 28px; display:flex; align-items:center; gap:14px; }
 .pod-cover {
   width:52px; height:52px; background:var(--bosque); border-radius:12px;
@@ -901,11 +906,16 @@ footer {
   .blog-meta-left { border-right:none; border-bottom:1px solid var(--borde-claro); padding-right:0; padding-bottom:20px; }
   .blog-meta-right,.pod-meta-right { padding:16px 0; }
   .blog-layout { grid-template-columns:1fr; padding:0 20px 48px; }
+  .bl-item { grid-template-columns:90px 1fr; gap:12px; }
+  .bl-item-img { width:90px; }
   .blog-main { padding-right:0; border-right:none; padding-top:32px; }
   .blog-sidebar { padding:32px 0 0; }
   .bfb { grid-template-columns:1fr; }
   .pod-meta-left { border-right:none; border-bottom:1px solid var(--borde-claro); }
   .pod-eps,.pod-vids { padding:32px 20px; }
+  .pod-tab-content { padding:32px 20px; }
+  .pod-yt-grid { grid-template-columns:1fr; }
+  .pod-yt-grid iframe { height:200px; }
   .ep-item { grid-template-columns:28px 40px 1fr; }
   .ep-dur { display:none; }
   .vid-grid { grid-template-columns:1fr 1fr; }
@@ -1159,18 +1169,13 @@ footer {
     <div class="blog-hero-title">BLOG <span class="outline">IDEAS.</span></div>
     <div class="blog-meta-row">
       <div class="blog-meta-left">Reflexiones para mujeres que van en serio. Sin filtros, sin perfeccionismo. Cada artículo es una conversación real.</div>
-      <div class="blog-meta-right">
-        <span class="bmr-label">Próximo evento</span>
-        <span class="bmr-date">03 JUL</span>
-        <p class="bmr-frase">¿Qué pasa cuando dejás de esperar estar lista?</p>
-        <button class="pill-btn bosque" style="font-size:13px;padding:9px 20px" onclick="openModal()">Reservar →</button>
-      </div>
+
     </div>
   </div>
   <div class="blog-layout">
     <div class="blog-main">
-      <div class="bfb">
-        <div class="bfb-img"><span class="bfb-ghost">CC</span></div>
+      <div class="bfb" onclick="window.location='/blog/sindrome-impostora'" style="cursor:pointer">
+        <div class="bfb-img"><img src="./img/SIS-001-menta-blog.png" alt="Sé perfectamente lo que hago"></div>
         <div class="bfb-body">
           <span class="bfb-tag">Síndrome de la impostora</span>
           <div class="bfb-title">Sé perfectamente lo que hago. Entonces, ¿por qué sigo esperando que alguien me descubra?</div>
@@ -1178,9 +1183,22 @@ footer {
         </div>
       </div>
       <div class="blog-list">
-        <div class="bl-item"><span class="bl-tag">Síndrome de la impostora</span><div class="bl-title">Listas para empezar — las mentiras que nos contamos</div><div class="bl-desc">Sobre esperar el momento perfecto que nunca llega.</div></div>
-        <div class="bl-item"><span class="bl-tag">Conexión</span><div class="bl-title">Cuando otra mujer te ve de verdad</div><div class="bl-desc">Lo que pasa cuando dejamos de competir y empezamos a sostener.</div></div>
-        <div class="bl-item"><span class="bl-tag">Desarrollo personal</span><div class="bl-title">Construir sin que el miedo construya por vos</div><div class="bl-desc">Estrategias concretas para mujeres que van en serio.</div></div>
+        <div class="bl-item" onclick="window.location='/blog/sindrome-no-desaparece'" style="cursor:pointer">
+          <div class="bl-item-img"><img src="./img/SIS-002-limon-blog.png" alt="El síndrome de la impostora no desaparece"></div>
+          <div class="bl-item-body">
+            <span class="bl-tag">Síndrome de la impostora</span>
+            <div class="bl-title">El síndrome de la impostora no desaparece cuando tenés éxito. Cambia de forma.</div>
+            <div class="bl-desc">Muchas mujeres esperan un punto de llegada donde el miedo desaparece. Pero la voz no se va con el éxito: muta, crece y se adapta.</div>
+          </div>
+        </div>
+        <div class="bl-item" onclick="window.location='/blog/dejar-de-prepararme'" style="cursor:pointer">
+          <div class="bl-item-img"><img src="./img/SIS-003-salvia-blog.png" alt="El momento en que dejé de prepararme para vivir"></div>
+          <div class="bl-item-body">
+            <span class="bl-tag">Transformación</span>
+            <div class="bl-title">El momento en que dejé de prepararme para vivir y empecé a vivir.</div>
+            <div class="bl-desc">Lo que llamamos preparación muchas veces es miedo disfrazado. La historia detrás del regreso de Club Conecta.</div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="blog-sidebar">
@@ -1193,11 +1211,8 @@ footer {
       <div class="bsw">
         <span class="bsw-label">Temas</span>
         <div class="bsw-temas">
-          <div class="bsw-tema"><span>Síndrome de la impostora</span><span class="bsw-tema-count">08</span></div>
-          <div class="bsw-tema"><span>Transformación</span><span class="bsw-tema-count">05</span></div>
-          <div class="bsw-tema"><span>Conexión</span><span class="bsw-tema-count">04</span></div>
-          <div class="bsw-tema"><span>Arte & creatividad</span><span class="bsw-tema-count">06</span></div>
-          <div class="bsw-tema"><span>Desarrollo personal</span><span class="bsw-tema-count">07</span></div>
+          <div class="bsw-tema"><span>Síndrome de la impostora</span><span class="bsw-tema-count">02</span></div>
+          <div class="bsw-tema"><span>Transformación</span><span class="bsw-tema-count">01</span></div>
         </div>
       </div>
       <div class="bsw" style="border-bottom:none">
@@ -1231,9 +1246,8 @@ footer {
       <div class="pod-meta-left">
         <p class="pod-meta-desc">Conversaciones honestas para mujeres que van en serio. Sin guión, sin filtros, con todo lo que no se dice en los otros espacios.</p>
         <div class="pod-plats">
-          <button class="pod-plat">Spotify</button>
-          <button class="pod-plat">Apple Podcasts</button>
-          <button class="pod-plat">YouTube</button>
+          <button class="pod-plat active" onclick="switchPodTab('spotify',this)">Spotify</button>
+          <button class="pod-plat" onclick="switchPodTab('youtube',this)">YouTube</button>
         </div>
       </div>
       <div class="pod-meta-right">
@@ -1242,23 +1256,18 @@ footer {
       </div>
     </div>
   </div>
-  <div class="pod-eps">
-    <div class="pod-sec-head"><span class="pod-sec-label">Episodios</span><span class="pod-badge">Podcast</span></div>
-    <div class="ep-item"><span class="ep-num">01</span><div class="ep-play"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div><div><div class="ep-titulo">¿Qué pasa cuando dejás de esperar estar lista?</div><div class="ep-desc">El episodio fundacional de Club Conecta.</div></div><span class="ep-dur">42 min</span></div>
-    <div class="ep-item"><span class="ep-num">02</span><div class="ep-play"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div><div><div class="ep-titulo">Síndrome de la impostora: la guía que nadie te dio</div><div class="ep-desc">Por qué aparece más fuerte cuando crecés.</div></div><span class="ep-dur">38 min</span></div>
-    <div class="ep-item"><span class="ep-num">03</span><div class="ep-play"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div><div><div class="ep-titulo">Mujeres que se sostienen — sobre sororidad real</div><div class="ep-desc">Lo que cambia cuando otra mujer te ve de verdad.</div></div><span class="ep-dur">51 min</span></div>
-    <div class="ep-item"><span class="ep-num">04</span><div class="ep-play"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div><div><div class="ep-titulo">Texturas, pigmentos y autoconocimiento</div><div class="ep-desc">El arte como herramienta de transformación.</div></div><span class="ep-dur">44 min</span></div>
-    <div class="ep-item"><span class="ep-num">05</span><div class="ep-play"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div><div><div class="ep-titulo">Construir sin que el miedo construya por vos</div><div class="ep-desc">Estrategia y mentalidad para emprendedoras.</div></div><span class="ep-dur">35 min</span></div>
+  <div class="pod-tab-content" id="pod-tab-spotify">
+    <div class="pod-embeds">
+      <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/2ZcnjJ7shZld0ZajjnlEVr?utm_source=generator&theme=0&t=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/0KSYRTZ4nDYPtaVWdBXE69?utm_source=generator&theme=0&t=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/7t1PGHoMjuUEvgT3tE8rEx?utm_source=generator&theme=0&t=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
   </div>
-  <div class="pod-vids">
-    <div class="pod-vid-head"><span class="pod-vid-label">Videos</span><span class="pod-vid-badge">YouTube</span></div>
-    <div class="vid-grid">
-      <div class="vid-item"><div class="vid-thumb"><span class="vid-ghost">CC</span><div class="vid-play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><div class="vid-body"><div class="vid-title">3 señales de que estás lista</div><div class="vid-dur">4 min</div></div></div>
-      <div class="vid-item"><div class="vid-thumb"><span class="vid-ghost">CC</span><div class="vid-play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><div class="vid-body"><div class="vid-title">Síndrome de la impostora: qué es y por qué</div><div class="vid-dur">8 min</div></div></div>
-      <div class="vid-item"><div class="vid-thumb"><span class="vid-ghost">CC</span><div class="vid-play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><div class="vid-body"><div class="vid-title">Cómo dejar de pedir permiso para ocupar espacio</div><div class="vid-dur">12 min</div></div></div>
-      <div class="vid-item"><div class="vid-thumb"><span class="vid-ghost">CC</span><div class="vid-play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><div class="vid-body"><div class="vid-title">Texturas y pigmentos — taller</div><div class="vid-dur">20 min</div></div></div>
-      <div class="vid-item"><div class="vid-thumb"><span class="vid-ghost">CC</span><div class="vid-play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><div class="vid-body"><div class="vid-title">Mi historia con el síndrome — Flor</div><div class="vid-dur">15 min</div></div></div>
-      <div class="vid-item"><div class="vid-thumb"><span class="vid-ghost">CC</span><div class="vid-play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><div class="vid-body"><div class="vid-title">Evento de aniversario — Próximamente</div><div class="vid-dur">3 julio 2026</div></div></div>
+  <div class="pod-tab-content" id="pod-tab-youtube" style="display:none">
+    <div class="pod-embeds pod-yt-grid">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/e8KtAsP3NT0?si=jIfQZ6n2umwf3ywu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/0cnvgkVXtIk?si=ISDH6NgeACKO_rd7&start=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/cRIzixKb5eo?si=snT40mejMIDKHRnu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
   </div>
   <footer>
@@ -1298,6 +1307,13 @@ footer {
 </div>
 
 <script>
+function switchPodTab(tab, btn) {
+  document.querySelectorAll('.pod-tab-content').forEach(el => el.style.display = 'none');
+  document.getElementById('pod-tab-' + tab).style.display = 'block';
+  document.querySelectorAll('.pod-plat').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
 function toggleMenu() {
   var menu = document.getElementById('mobile-menu');
   var btn = document.getElementById('nav-hamburger');
@@ -1320,7 +1336,21 @@ function showPage(n) {
   if (btn) btn.classList.remove('open');
   document.body.style.overflow = '';
   window.scrollTo(0,0);
+  // update URL hash
+  history.pushState(null, '', n === 'home' ? '/' : '#' + n);
 }
+
+// on load, read hash and show correct page
+(function() {
+  var hash = window.location.hash.replace('#','');
+  if (hash === 'blog' || hash === 'podcast') showPage(hash);
+})();
+
+// handle back/forward browser buttons
+window.addEventListener('popstate', function() {
+  var hash = window.location.hash.replace('#','');
+  showPage(hash || 'home');
+});
 function openModal() {
   document.getElementById('modal').classList.add('open');
   document.getElementById('modal-form').style.display = 'flex';
