@@ -150,6 +150,23 @@ footer { background:var(--bosque); padding:60px 80px 36px; }
 }
 @media (max-width:480px) { .footer-top { grid-template-columns:1fr; } }
 </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1023472093546316');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1023472093546316&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -234,7 +251,7 @@ footer { background:var(--bosque); padding:60px 80px 36px; }
   <div class="modal-box">
     <div class="modal-top">
       <h3>Reservá tu lugar</h3>
-      <p>Primer Encuentro · 3 julio 2026 · Sin costo</p>
+      <p>Primer Encuentro · 3 julio 2026 · 18.30hs · Sin costo</p>
       <button class="modal-close" onclick="closeModal()">✕</button>
     </div>
     <div class="modal-body" id="modal-body">
@@ -249,7 +266,7 @@ footer { background:var(--bosque); padding:60px 80px 36px; }
     <div class="success-block" id="success-block">
       <span class="success-icon">✓</span>
       <h3>¡Ya estás adentro!</h3>
-      <p>Te enviamos los detalles por email. Nos vemos el 3 de julio.</p>
+      <p>Te enviamos los detalles por email. Nos vemos el 3 de julio a las 18.30hs.</p>
     </div>
   </div>
 </div>
