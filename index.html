@@ -1134,7 +1134,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div>
         <p class="ev-frase">¿Qué pasa cuando dejás de esperar estar lista?</p>
         <div class="ev-meta">
-          <div class="ev-meta-row"><span class="ev-meta-key">Cuándo</span><span class="ev-meta-val">Jueves 3 de julio · 18.30hs</span></div>
+          <div class="ev-meta-row"><span class="ev-meta-key">Cuándo</span><span class="ev-meta-val">Miércoles 5 de agosto · 9.30hs</span></div>
           <div class="ev-meta-row"><span class="ev-meta-key">Dónde</span><span class="ev-meta-val">Online · Link por email</span></div>
           <div class="ev-meta-row"><span class="ev-meta-key">Costo</span><span class="ev-meta-val ev-mv acc">SIN COSTO</span></div>
         </div>
@@ -1221,7 +1221,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <a href="#" onclick="showPage('home');return false;">Inicio</a>
           <a href="/blog">Blog</a>
           <a href="/podcast">Podcast & Videos</a>
-          <button onclick="openModal()">Evento 3 julio</button>
+          <button onclick="openModal()">Evento 5 agosto</button>
         </div>
       </div>
       <div>
@@ -1396,7 +1396,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="modal-box">
     <div class="modal-top">
       <h3>Reservá tu lugar</h3>
-      <p>Primer Encuentro · 3 julio 2026 · 18.30hs · Sin costo</p>
+      <p>Primer Encuentro · 5 agosto 2026 · 9.30hs · Sin costo</p>
       <button class="modal-close" onclick="closeModal()">✕</button>
     </div>
     <div class="modal-body" id="modal-body">
@@ -1411,7 +1411,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="success-block" id="success-block">
       <span class="success-icon">✓</span>
       <h3>¡Ya estás adentro!</h3>
-      <p>Te enviamos los detalles por email. Nos vemos el 3 de julio a las 18.30hs.</p>
+      <p>Te enviamos los detalles por email. Nos vemos el 5 de agosto a las 9.30hs.</p>
     </div>
   </div>
 </div>
@@ -1515,7 +1515,7 @@ function handleNL(e) {
   ok.textContent = '✓ Suscripta.';
 }
 function updateCountdown() {
-  var diff = new Date('2026-07-03T18:30:00-03:00') - new Date();
+  var diff = new Date('2026-08-05T09:30:00-03:00') - new Date();
   function pad(n){ return String(Math.max(0,n)).padStart(2,'0'); }
   if (diff <= 0) { ['cd-d','cd-h','cd-m','cd-s'].forEach(id => { var el=document.getElementById(id); if(el) el.textContent='00'; }); return; }
   var d=Math.floor(diff/86400000), h=Math.floor((diff%86400000)/3600000), m=Math.floor((diff%3600000)/60000), s=Math.floor((diff%60000)/1000);
