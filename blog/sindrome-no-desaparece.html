@@ -118,6 +118,30 @@ input,button,select,textarea { font-family:'Satoshi','Inter',sans-serif; cursor:
   transition:background .15s; cursor:pointer; white-space:nowrap; margin-left:4px;
 }
 .nav-cta:hover { background:#c8dc3e; }
+.nav-socials { display:flex; align-items:center; gap:2px; margin-left:4px; padding-left:8px; border-left:1px solid rgba(255,255,255,.12); }
+.nav-social-btn { width:32px; height:32px; border-radius:50%; background:none; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .15s; text-decoration:none; }
+.nav-social-btn:hover { background:rgba(255,255,255,.1); }
+.nav-social-btn svg { width:15px; height:15px; fill:rgba(255,255,255,.6); display:block; }
+.modal-overlay { position:fixed; inset:0; background:rgba(6,25,15,.9); z-index:200; display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:opacity .2s; padding:20px; }
+.modal-overlay.open { opacity:1; pointer-events:all; }
+.modal-box { background:var(--crema); max-width:500px; width:100%; border-radius:24px; border:1.5px solid var(--borde-claro); position:relative; overflow:hidden; }
+.modal-top { background:var(--bosque); padding:28px 32px; position:relative; }
+.modal-top h3 { font-family:'Bauhaus'; font-weight:900; font-size:24px; color:var(--crema); letter-spacing:-.02em; margin-bottom:4px; }
+.modal-top p { font-size:11px; color:rgba(255,255,255,.45); text-transform:uppercase; letter-spacing:.08em; }
+.modal-close { position:absolute; top:12px; right:16px; background:none; border:none; font-size:22px; color:rgba(255,255,255,.4); cursor:pointer; }
+.modal-close:hover { color:var(--crema); }
+.modal-body { padding:28px 32px; }
+.modal-frase { font-size:13px; font-style:italic; color:var(--gris); margin-bottom:20px; line-height:1.6; }
+.modal-form { display:flex; flex-direction:column; gap:8px; }
+.modal-input { padding:13px 16px; background:rgba(6,61,48,.05); border-radius:12px; border:1.5px solid var(--borde-claro); font-size:14px; color:var(--texto); outline:none; transition:border-color .15s; font-family:'Satoshi',sans-serif; }
+.modal-input:focus { border-color:var(--salvia); }
+.modal-form button { font-family:'Bauhaus'; font-weight:900; font-size:11px; letter-spacing:.15em; text-transform:uppercase; padding:15px; background:var(--bosque); color:var(--crema); border:none; border-radius:12px; transition:background .15s; cursor:pointer; }
+.modal-form button:hover { background:var(--salvia); }
+.modal-nota { font-size:10px; color:var(--gris); text-align:center; margin-top:12px; }
+.success-block { display:none; padding:40px 32px; text-align:center; }
+.success-icon { font-size:32px; color:var(--salvia); display:block; margin-bottom:12px; }
+.success-block h3 { font-family:'Bauhaus'; font-size:22px; color:var(--bosque); margin-bottom:8px; }
+.success-block p { font-size:13px; color:var(--gris); }
 .nav-hamburger { display:none; }
 
 /* MOBILE MENU */
@@ -269,7 +293,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a class="nav-link" href="/">Inicio</a>
     <a class="nav-link active" href="/#blog">Blog</a>
     <a class="nav-link" href="/#podcast">Podcast</a>
-    <button class="nav-cta" onclick="document.getElementById('modal-cta').style.display='flex'">Sumarme →</button>
+    <button class="nav-cta" onclick="openModal()">Sumarme →</button>
+      <div class="nav-socials">
+        <a class="nav-social-btn" href="https://www.instagram.com/hola.clubconecta" target="_blank" rel="noopener" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.97.24 2.43.403a4.92 4.92 0 0 1 1.772 1.153 4.902 4.902 0 0 1 1.153 1.772c.163.46.349 1.26.403 2.43.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.24 1.97-.403 2.43a4.902 4.902 0 0 1-1.153 1.772 4.92 4.92 0 0 1-1.772 1.153c-.46.163-1.26.349-2.43.403-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.24-2.43-.403a4.92 4.92 0 0 1-1.772-1.153 4.902 4.902 0 0 1-1.153-1.772c-.163-.46-.349-1.26-.403-2.43C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.054-1.17.24-1.97.403-2.43A4.902 4.902 0 0 1 3.79 2.948a4.92 4.92 0 0 1 1.772-1.153c.46-.163 1.26-.349 2.43-.403C9.416 2.175 9.796 2.163 12 2.163zm0-2.163C8.756 0 8.348.013 7.067.072 5.79.131 4.903.333 4.14.63a7.07 7.07 0 0 0-2.555 1.664A7.07 7.07 0 0 0 .63 4.14C.333 4.902.131 5.79.072 7.067.013 8.348 0 8.756 0 12c0 3.244.013 3.652.072 4.933.059 1.277.261 2.164.558 2.927a7.07 7.07 0 0 0 1.664 2.555 7.07 7.07 0 0 0 2.555 1.664c.763.297 1.65.499 2.927.558C8.348 23.987 8.756 24 12 24s3.652-.013 4.933-.072c1.277-.059 2.164-.261 2.927-.558a7.07 7.07 0 0 0 2.555-1.664 7.07 7.07 0 0 0 1.664-2.555c.297-.763.499-1.65.558-2.927.059-1.281.072-1.689.072-4.933s-.013-3.652-.072-4.933c-.059-1.277-.261-2.164-.558-2.927a7.07 7.07 0 0 0-1.664-2.555A7.07 7.07 0 0 0 19.86.63C19.097.333 18.21.131 16.933.072 15.652.013 15.244 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
+        <a class="nav-social-btn" href="https://www.youtube.com/@hola.clubconecta" target="_blank" rel="noopener" title="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        <a class="nav-social-btn" href="https://open.spotify.com/show/48OBG9rCOXOuzxEWMgWFH2?si=3a40f5ef456e45a6" target="_blank" rel="noopener" title="Spotify"><svg viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg></a>
+        <a class="nav-social-btn" href="https://www.linkedin.com/company/hola-clubconecta/" target="_blank" rel="noopener" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+      </div>
   </div>
   <button class="nav-hamburger" id="nav-hamburger" onclick="toggleMenu()" aria-label="Menú">
     <span></span><span></span><span></span>
@@ -282,7 +312,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <a href="/">Inicio</a>
   <a href="/#blog">Blog</a>
   <a href="/#podcast">Podcast</a>
-  <button class="mobile-menu-cta" onclick="document.getElementById('modal-cta').style.display='flex';toggleMenu()">Sumarme →</button>
+  <button class="mobile-menu-cta" onclick="openModal();toggleMenu()">Sumarme →</button>
 </div>
 
 <!-- ARTICLE -->
@@ -330,6 +360,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="footer-bot"><p class="footer-copy">© 2026 Club Conecta — <span>Flor + Orne</span></p><p class="footer-copy">Conexión. Transformación.</p></div>
 </footer>
 
+<div class="modal-overlay" id="modal" onclick="closeOut(event)">
+  <div class="modal-box">
+    <div class="modal-top">
+      <h3>Reservá tu lugar</h3>
+      <p>Primer Encuentro · 5 agosto 2026 · 9.30hs · Sin costo</p>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body" id="modal-body">
+      <p class="modal-frase">¿Qué pasa cuando dejás de esperar estar lista? — Una noche online, sin filtros.</p>
+      <div class="modal-form" id="modal-form">
+        <input type="text" class="modal-input" placeholder="Tu nombre" required aria-label="Nombre">
+        <input type="email" class="modal-input" placeholder="tu@email.com" required aria-label="Email">
+        <button type="button" onclick="handleModal(event)">Quiero estar ahí →</button>
+      </div>
+      <p class="modal-nota">Sin costo · Sin spam · Solo el link</p>
+    </div>
+    <div class="success-block" id="success-block">
+      <span class="success-icon">✓</span>
+      <h3>¡Ya estás adentro!</h3>
+      <p>Te enviamos los detalles por email. Nos vemos el 5 de agosto a las 9.30hs.</p>
+    </div>
+  </div>
+</div>
+
 <script>
 function toggleMenu() {
   var menu = document.getElementById('mobile-menu');
@@ -337,6 +391,34 @@ function toggleMenu() {
   menu.classList.toggle('open');
   btn.classList.toggle('open');
   document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+}
+
+function openModal() {
+  document.getElementById('modal').classList.add('open');
+  document.getElementById('modal-form').style.display = 'flex';
+  document.getElementById('success-block').style.display = 'none';
+  document.getElementById('modal-body').style.display = 'block';
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function closeOut(e) { if (e.target === document.getElementById('modal')) closeModal(); }
+function handleModal(e) {
+  e.preventDefault();
+  var inputs = document.querySelectorAll('.modal-input');
+  var name = inputs[0].value.trim();
+  var email = inputs[1].value.trim();
+  if (!name || !email) return;
+  var fd = new FormData();
+  fd.append('fields[name]', name);
+  fd.append('fields[email]', email);
+  fd.append('ml-submit', '1');
+  fetch('https://assets.mailerlite.com/jsonp/432956/forms/118209537747896640/subscribe', { method:'POST', body:fd, mode:'no-cors' });
+  document.getElementById('modal-form').style.display = 'none';
+  document.getElementById('modal-body').style.display = 'none';
+  document.getElementById('success-block').style.display = 'block';
 }
 </script>
 </body>
