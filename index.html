@@ -609,7 +609,7 @@ footer {
   margin-bottom:40px;
   font-size:clamp(18px, 3vw, 44px);
 }
-@media(max-width:600px){ .hero-title { font-size:16px; } }
+@media(max-width:600px){ .hero-title { font-size:22px; } }
 /* Social icons in desktop nav */
 .nav-socials {
   display:flex; align-items:center; gap:2px; margin-left:4px;
@@ -885,6 +885,13 @@ footer {
   .section-contenido-inner { padding:60px 40px; }
 }
 
+
+/* Secciones inline responsive */
+@media(max-width:768px) {
+  .section-video-inline { padding:60px 24px !important; }
+  .section-tmv-inline { padding:60px 24px !important; }
+  .hero-content-inline { left:24px !important; right:24px !important; bottom:60px !important; }
+}
 @media (max-width:768px) {
   #site-nav {
     width:calc(100% - 32px);
@@ -1063,14 +1070,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <source src="./img/hero-video.mp4" type="video/mp4">
     </video>
     <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,.65) 0%, rgba(0,0,0,.1) 60%);"></div>
-    <div style="position:absolute; bottom:80px; left:80px; right:80px;">
+    <div class="hero-content-inline" style="position:absolute; bottom:80px; left:80px; right:80px; padding-top:80px;">
       <h1 class="hero-title">Comunidad de mujeres que<br>conectan, crean y se transforman.</h1>
-      <a href="/tu-mapa-visual" style="display:inline-flex; align-items:center; background:var(--limon); color:var(--bosque); font-family:'Bauhaus',sans-serif; font-weight:900; font-size:13px; letter-spacing:.1em; text-transform:uppercase; padding:16px 36px; border-radius:60px; text-decoration:none;">Ver Tu Mapa Visual →</a>
+      <a href="/tu-mapa-visual" style="display:inline-flex; align-items:center; gap:8px; background:var(--limon); color:var(--bosque); font-family:'Bauhaus',sans-serif; font-weight:900; font-size:13px; letter-spacing:.1em; text-transform:uppercase; padding:16px 36px; border-radius:60px; text-decoration:none; white-space:nowrap;">Ver Tu Mapa Visual →</a>
     </div>
   </section>
 
   <!-- VIDEO CLASE -->
-  <section style="background:var(--crema); padding:100px 80px;">
+  <section class="section-video-inline" style="background:var(--crema); padding:100px 80px;">
     <div>
       <h2 class="bauhaus" style="font-size:clamp(32px,4.5vw,56px); margin-bottom:20px; line-height:1.05; letter-spacing:-.02em;">La clase que<br><span>lo empezó.</span></h2>
       <p style="font-size:16px; line-height:1.8; color:var(--gris); max-width:600px; margin-bottom:44px;">En agosto nos juntamos en vivo para hablar del síndrome de la impostora — esa voz que aparece justo cuando estás por dar un paso importante. Si no pudiste estar, acá está la clase completa.</p>
@@ -1085,7 +1092,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </section>
 
   <!-- TU MAPA VISUAL TEASER -->
-  <section style="background:var(--bosque); padding:100px 80px;">
+  <section class="section-tmv-inline" style="background:var(--bosque); padding:100px 80px;">
     <div>
       <h2 class="bauhaus" style="font-size:clamp(40px,6vw,88px); color:var(--crema); line-height:.95; letter-spacing:-.02em; margin-bottom:24px; white-space:nowrap;">Tu Mapa <span style="color:var(--limon);">Visual</span></h2>
       <p style="font-size:17px; line-height:1.8; color:rgba(255,255,255,.6); max-width:540px; margin-bottom:40px;">90 minutos en vivo con Flor y Orne para armar tu propio mood board personal. No de tu marca — tuyo. Online o presencial en El Trébol, Santa Fe.</p>
