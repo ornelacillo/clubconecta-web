@@ -118,11 +118,17 @@ input,button { font-family:'Satoshi','Inter',sans-serif; cursor:pointer; }
 
 /* ── HERO ── */
 .hero-tmv {
-  background: linear-gradient(rgba(0,0,0,0.30), rgba(0,0,0,0.30)), url('./img/taller-foto.jpg') center/cover no-repeat;
+  background: var(--bosque);
   min-height:100vh;
   display:flex; flex-direction:column; justify-content:flex-end;
   padding:0 80px 80px; position:relative; overflow:hidden;
 }
+.hero-tmv::before {
+  content:'';
+  position:absolute; inset:0; z-index:0;
+  background: linear-gradient(rgba(0,0,0,0.30), rgba(0,0,0,0.30)), url('./img/taller-foto.jpg') center/cover no-repeat;
+}
+.hero-tmv > * { position:relative; z-index:1; }
 .hero-tmv-badge {
   display:inline-flex; align-items:center; gap:8px;
   background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15);
@@ -395,7 +401,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="hero-tmv-pills">
       <span class="hero-pill">90 minutos</span>
       <span class="hero-pill">🖥 Online · Zoom</span>
-      <span class="hero-pill">📍 Presencial · hasta 15 cupos</span>
+      <span class="hero-pill">📍 Presencial · El Trébol · 15 cupos</span>
     </div>
   </div>
 </section>
@@ -515,7 +521,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="precio-inner">
     <div class="precio-left">
       <h2>Un precio. Dos formas de vivirlo.</h2>
-      <p>Podés elegir vivirlo de forma online desde cualquier parte de Latinoamérica, o en persona en Rosario. El precio es el mismo para las dos modalidades: <strong style="color:var(--limon);">$45.000 ARS</strong> en esta primera edición de lanzamiento.<br><br>Al anotarte te preguntamos cuál vas a elegir. El lugar de encuentro presencial se confirma por email.</p>
+      <p>Podés elegir vivirlo de forma online desde cualquier parte de Latinoamérica, o en persona en El Trébol, Santa Fe. El precio es el mismo para las dos modalidades: <strong style="color:var(--limon);">$45.000 ARS</strong> en esta primera edición de lanzamiento.<br><br>Al anotarte te preguntamos cuál vas a elegir. El encuentro presencial es en El Trébol, Santa Fe. Te confirmamos el lugar exacto por email.</p>
     </div>
     <div class="precio-card">
       <span class="pc-badge">Precio único · Lanzamiento</span>
@@ -525,7 +531,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="pc-modalidades">
         <div class="pc-mod"><span class="pc-mod-icon">🖥</span><div><strong>Online</strong><br>Zoom · Toda Latinoamérica · Sin límite de cupos</div></div>
-        <div class="pc-mod"><span class="pc-mod-icon">📍</span><div><strong>Presencial</strong><br>Rosario, Argentina · Máx. 15 cupos</div></div>
+        <div class="pc-mod"><span class="pc-mod-icon">📍</span><div><strong>Presencial</strong><br>El Trébol, Santa Fe · Máx. 15 cupos</div></div>
       </div>
       <p class="pc-note">Indicanos al anotarte si vas a ir en persona o de manera online. Te confirmamos el lugar de encuentro presencial por email.</p>
       <div class="pc-includes">
@@ -551,7 +557,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="faq-item">
       <p class="faq-q">¿En qué horario es?</p>
-      <p class="faq-a">La fecha y el horario se confirman a quienes se hayan anotado. El taller online está pensado para un domingo a la tarde, en horario que cubra Argentina, Chile y Uruguay. El presencial se coordina según los cupos en Rosario — te avisamos con anticipación suficiente.</p>
+      <p class="faq-a">La fecha y el horario se confirman a quienes se hayan anotado. El taller online está pensado para un domingo a la tarde, en horario que cubra Argentina, Chile y Uruguay. El presencial es en El Trébol, Santa Fe — te confirmamos fecha y dirección por email una vez que te anotás.</p>
     </div>
     <div class="faq-item">
       <p class="faq-q">¿Qué pasa si no puedo estar en vivo?</p>
