@@ -126,9 +126,14 @@ input,button { font-family:'Satoshi','Inter',sans-serif; cursor:pointer; }
 .hero-tmv::before {
   content:'';
   position:absolute; inset:0; z-index:0;
-  background: linear-gradient(rgba(0,0,0,0.30), rgba(0,0,0,0.30)), url('./img/taller-foto.jpg') center/cover no-repeat;
+  background: url('./img/taller-foto.jpg') center/cover no-repeat;
 }
-.hero-tmv > * { position:relative; z-index:1; }
+.hero-tmv::after {
+  content:'';
+  position:absolute; inset:0; z-index:1;
+  background: rgba(0,0,0,0.45);
+}
+.hero-tmv > * { position:relative; z-index:2; }
 .hero-tmv-badge {
   display:inline-flex; align-items:center; gap:8px;
   background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15);
@@ -350,6 +355,15 @@ footer { background:var(--bosque); padding:48px 80px 32px; }
   .precio-card { padding:28px 20px; }
 }
 </style>
+<!-- MailerLite Universal -->
+<script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '432956');
+</script>
+<!-- End MailerLite Universal -->
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -536,7 +550,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="pc-note">Indicanos al anotarte si vas a ir en persona o de manera online. Te confirmamos el lugar de encuentro presencial por email.</p>
       <div class="pc-includes">
         <p class="pc-inc-title">Incluye</p>
-        <div class="pc-inc-item"><span class="pc-inc-check">✓</span>90 minutos de taller en vivo con Orne</div>
+        <div class="pc-inc-item"><span class="pc-inc-check">✓</span>90 minutos de taller en vivo con Flor y Orne</div>
         <div class="pc-inc-item"><span class="pc-inc-check">✓</span>Plantilla de Canva para el mood board</div>
         <div class="pc-inc-item"><span class="pc-inc-check">✓</span>Acceso al grupo de WhatsApp del taller</div>
         <div class="pc-inc-item"><span class="pc-inc-check">✓</span>Tu mapa visual terminado para llevarte</div>
@@ -599,29 +613,69 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- MODAL -->
 <div class="modal-overlay" id="modal" onclick="closeOut(event)">
-  <div class="modal-box">
+  <div class="modal-box" style="max-width:460px;">
     <div class="modal-top">
       <h3>Quiero anotarme</h3>
       <p>Tu Mapa Visual · $45.000 ARS · Presencial u online</p>
       <button class="modal-close" onclick="closeModal()">✕</button>
     </div>
-    <div class="modal-body" id="modal-body">
-      <p class="modal-frase">Te reservamos el precio de lanzamiento. En cuanto confirmemos la fecha, sos la primera en saberlo.</p>
-      <div class="modal-form" id="modal-form">
-        <input type="text" class="modal-input" id="tmv-name" placeholder="Tu nombre" required aria-label="Nombre">
-        <input type="email" class="modal-input" id="tmv-email" placeholder="tu@email.com" required aria-label="Email">
-        <select class="modal-input" id="tmv-mod" aria-label="Modalidad"><option value="">¿Presencial u online?</option><option value="online">Online (Zoom)</option><option value="presencial">Presencial (Rosario)</option></select>
-        <button type="button" onclick="handleModal(event)">Anotarme al taller →</button>
+    <div class="modal-body" style="padding:0 0 8px;">
+      <div id="mlb2-44597911" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-44597911">
+        <div class="ml-form-align-center">
+          <div class="ml-form-embedWrapper embedForm">
+            <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+              <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/432956/forms/195146973506963111/subscribe" data-code="" method="post" target="_blank">
+                <div class="ml-form-formContent" style="padding:20px 20px 0;">
+                  <div class="ml-form-fieldRow">
+                    <div class="ml-field-group ml-field-name">
+                      <label style="font-family:'Satoshi',sans-serif;font-size:13px;font-weight:600;color:var(--gris);text-transform:uppercase;letter-spacing:.08em;">Nombre</label>
+                      <input aria-label="name" type="text" class="form-control modal-input" name="fields[name]" placeholder="Tu nombre" autocomplete="given-name">
+                    </div>
+                  </div>
+                  <div class="ml-form-fieldRow" style="margin-top:8px;">
+                    <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                      <label style="font-family:'Satoshi',sans-serif;font-size:13px;font-weight:600;color:var(--gris);text-transform:uppercase;letter-spacing:.08em;">Email</label>
+                      <input aria-label="email" aria-required="true" type="email" class="form-control modal-input" name="fields[email]" placeholder="tu@email.com" autocomplete="email">
+                    </div>
+                  </div>
+                  <div class="ml-form-fieldRow ml-last-item" style="margin-top:8px;">
+                    <div class="ml-field-group ml-field-company ml-validate-required">
+                      <label style="font-family:'Satoshi',sans-serif;font-size:13px;font-weight:600;color:var(--gris);text-transform:uppercase;letter-spacing:.08em;">¿Presencial u online?</label>
+                      <select class="modal-input" name="fields[company]" aria-label="company" aria-required="true" style="appearance:none;-webkit-appearance:none;background-image:url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'12\' height=\'8\' viewBox=\'0 0 12 8\'%3E%3Cpath fill=\'%23666\' d=\'M1 1l5 5 5-5\'/%3E%3C/svg%3E');background-repeat:no-repeat;background-position:right 14px center;cursor:pointer;">
+                        <option value="">—</option>
+                        <option>Presencial (El Trébol)</option>
+                        <option>Online (Zoom)</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <input type="hidden" name="ml-submit" value="1">
+                <div class="ml-form-embedSubmit" style="padding:16px 20px 20px;">
+                  <button type="submit" style="width:100%;padding:15px;background:var(--bosque);color:var(--crema);font-family:'Bauhaus',sans-serif;font-weight:900;font-size:12px;letter-spacing:.12em;text-transform:uppercase;border:none;border-radius:12px;cursor:pointer;transition:background .15s;" onmouseover="this.style.background='var(--salvia)'" onmouseout="this.style.background='var(--bosque)'">¡Quiero sumarme! →</button>
+                </div>
+                <input type="hidden" name="anticsrf" value="true">
+              </form>
+            </div>
+            <div class="ml-form-successBody row-success" style="display:none;padding:40px 32px;text-align:center;">
+              <span style="font-size:32px;color:var(--salvia);display:block;margin-bottom:12px;">✓</span>
+              <h3 style="font-family:'Bauhaus',sans-serif;font-size:22px;color:var(--bosque);margin-bottom:8px;">¡Ya estás anotada!</h3>
+              <p style="font-size:13px;color:var(--gris);">Te reservamos el precio de lanzamiento. En cuanto confirmemos la fecha, te avisamos primero.</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <p class="modal-nota">$45.000 ARS · Sin spam · Te avisamos la fecha</p>
-    </div>
-    <div class="success-block" id="success-block">
-      <span class="success-icon">✓</span>
-      <h3>¡Ya estás anotada!</h3>
-      <p>Te reservamos el precio de lanzamiento. En cuanto confirmemos la fecha, te lo enviamos directo a tu email.</p>
+      <p style="font-size:11px;color:var(--gris);text-align:center;padding:0 20px 16px;">$45.000 ARS · Sin spam · Te avisamos la fecha</p>
     </div>
   </div>
 </div>
+<script>
+  function ml_webform_success_44597911() {
+    var $ = ml_jQuery || jQuery;
+    $('.ml-subscribe-form-44597911 .row-success').show();
+    $('.ml-subscribe-form-44597911 .row-form').hide();
+  }
+</script>
+<script src="https://groot.mailerlite.com/js/w/webforms.min.js?v83147fa8ce2d95cb73ece7f28b469519" type="text/javascript"></script>
 
 <script>
 function toggleMenu() {
@@ -643,21 +697,7 @@ function closeModal() {
   document.body.style.overflow = '';
 }
 function closeOut(e) { if (e.target === document.getElementById('modal')) closeModal(); }
-function handleModal(e) {
-  e.preventDefault();
-  var name = document.getElementById('tmv-name').value.trim();
-  var email = document.getElementById('tmv-email').value.trim();
-  if (!name || !email) return;
-  var fd = new FormData();
-  fd.append('fields[name]', name);
-  fd.append('fields[email]', email);
-  fd.append('ml-submit', '1');
-  fetch('https://assets.mailerlite.com/jsonp/432956/forms/118209537747896640/subscribe', { method:'POST', body:fd, mode:'no-cors' });
-  fbq('track', 'Lead');
-  document.getElementById('modal-form').style.display = 'none';
-  document.getElementById('modal-body').style.display = 'none';
-  document.getElementById('success-block').style.display = 'block';
-}
+
 document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
 </script>
 </body>
