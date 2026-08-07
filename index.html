@@ -601,6 +601,15 @@ footer {
 .mobile-menu-socials a:hover { background:rgba(255,255,255,.18); }
 .mobile-menu-socials svg { width:18px; height:18px; fill:rgba(255,255,255,.7); }
 
+
+/* Hero title */
+.hero-title {
+  font-family:'Bauhaus',sans-serif; font-weight:900;
+  color:#fff; line-height:1.05; letter-spacing:-.02em;
+  margin-bottom:40px;
+  font-size:clamp(18px, 3vw, 44px);
+}
+@media(max-width:600px){ .hero-title { font-size:16px; } }
 /* Social icons in desktop nav */
 .nav-socials {
   display:flex; align-items:center; gap:2px; margin-left:4px;
@@ -1050,13 +1059,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- HERO VIDEO -->
   <section style="width:100%; height:100vh; overflow:hidden; position:relative; background:#000;">
     <video autoplay muted loop playsinline
-      style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; opacity:.85;">
+      style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 80%; display:block; opacity:.85;">
       <source src="./img/hero-video.mp4" type="video/mp4">
     </video>
     <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,.65) 0%, rgba(0,0,0,.1) 60%);"></div>
     <div style="position:absolute; bottom:80px; left:80px; right:80px;">
-      <p style="font-size:clamp(13px,1.2vw,16px); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.55); margin-bottom:20px;">🌿 Talleres y experiencias</p>
-      <h1 style="font-family:'Bauhaus',sans-serif; font-weight:900; font-size:clamp(36px,5.5vw,76px); color:#fff; line-height:1; letter-spacing:-.02em; margin-bottom:40px; max-width:720px;">Comunidad de mujeres que conectan, crean y se transforman.</h1>
+      <h1 class="hero-title">Comunidad de mujeres que<br>conectan, crean y se transforman.</h1>
       <a href="/tu-mapa-visual" style="display:inline-flex; align-items:center; background:var(--limon); color:var(--bosque); font-family:'Bauhaus',sans-serif; font-weight:900; font-size:13px; letter-spacing:.1em; text-transform:uppercase; padding:16px 36px; border-radius:60px; text-decoration:none;">Ver Tu Mapa Visual →</a>
     </div>
   </section>
