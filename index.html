@@ -1047,114 +1047,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div id="page-home" class="page active">
 
   <!-- HERO -->
-  <section class="hero">
-    <div class="hero-left">
-      <span class="hero-eyebrow">Club Conecta · Aniversario 2026</span>
-      <h1 class="hero-heading">
-        Ya estás<br>
-        <span class="hero-word-wrap"><span class="hero-word">lista.</span></span>
-      </h1>
-      <p class="hero-desc">
-        Un espacio para mujeres que dejaron de pedir permiso a la duda.
-        <strong>Siempre lo estuviste.</strong>
-      </p>
-      <div class="hero-actions">
-        <button class="pill-btn limon" onclick="openModal()">Sumarme al evento →</button>
-        <button class="hero-link-sec" onclick="showPage('blog')">Ver contenido</button>
-      </div>
-    </div>
-    <div class="hero-imgs" id="hero-imgs">
-      <div class="hero-img-card card-lunch draggable">
-        <img src="./img/lunch-completo.jpg" alt="Lunch Club Conecta">
-      </div>
-      <div class="hero-img-card card-orne draggable">
-        <img src="./img/orne.png" alt="Orne">
-      </div>
-      <div class="hero-img-card card-flor draggable">
-        <img src="./img/flor.png" alt="Flor">
+  <!-- HERO VIDEO -->
+  <section style="width:100%; height:100vh; overflow:hidden; position:relative; background:#000;">
+    <video autoplay muted loop playsinline
+      style="width:100%; height:100%; object-fit:cover; display:block; opacity:.85;">
+      <source src="./img/hero-video.mp4" type="video/mp4">
+    </video>
+  </section>
+
+  <!-- VIDEO CLASE -->
+  <section style="background:var(--crema); padding:100px 80px;">
+    <div style="max-width:860px; margin:0 auto;">
+      <h2 class="bauhaus" style="font-size:clamp(32px,4.5vw,56px); margin-bottom:20px; line-height:1.05; letter-spacing:-.02em;">La clase que<br><span>lo empezó.</span></h2>
+      <p style="font-size:16px; line-height:1.8; color:var(--gris); max-width:600px; margin-bottom:44px;">En agosto nos juntamos en vivo para hablar del síndrome de la impostora — esa voz que aparece justo cuando estás por dar un paso importante. Si no pudiste estar, acá está la clase completa.</p>
+      <div style="position:relative; width:100%; padding-top:56.25%; border-radius:20px; overflow:hidden; background:#000; box-shadow:0 8px 40px rgba(6,61,48,.12);">
+        <iframe style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
+          src="https://www.youtube.com/embed/Rz5utFJ-uY4"
+          title="Síndrome de la Impostora — Club Conecta"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT dark -->
-  <section class="section-about" id="about">
-    <div class="about-img-wrap">
-      <div class="about-deco">CC</div>
-      <video src="./img/flor-y-orne-eventos.mp4" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;"></video>
-    </div>
-    <div class="about-content">
-      <span class="section-tag">Quiénes somos</span>
-      <h2 class="bauhaus">Flor <span class="plus">+</span> Orne</h2>
-      <p class="about-desc">Somos dos mujeres que empezamos esto porque luchábamos con lo mismo que las mujeres que queríamos acompañar. Y esa fue exactamente la razón para hacerlo.</p>
-      <blockquote class="about-quote">"Transformación empieza cuando dejás de pedir permiso para ocupar tu lugar."</blockquote>
+  <!-- TU MAPA VISUAL TEASER -->
+  <section style="background:var(--bosque); padding:100px 80px;">
+    <div style="max-width:860px; margin:0 auto;">
+      <h2 class="bauhaus" style="font-size:clamp(48px,7vw,96px); color:var(--crema); line-height:.95; letter-spacing:-.02em; margin-bottom:24px;">Tu Mapa<br><span style="color:var(--limon);">Visual</span></h2>
+      <p style="font-size:17px; line-height:1.8; color:rgba(255,255,255,.6); max-width:540px; margin-bottom:40px;">90 minutos en vivo con Flor y Orne para armar tu propio mood board personal. No de tu marca — tuyo. Online o presencial en El Trébol, Santa Fe.</p>
+      <div style="display:flex; align-items:center; gap:24px; flex-wrap:wrap;">
+        <a href="/tu-mapa-visual" style="display:inline-flex; align-items:center; background:var(--limon); color:var(--bosque); font-family:'Bauhaus',sans-serif; font-weight:900; font-size:13px; letter-spacing:.1em; text-transform:uppercase; padding:16px 36px; border-radius:60px; text-decoration:none; transition:background .15s;" onmouseover="this.style.background='#c8dc3e'" onmouseout="this.style.background='var(--limon)'">Ver el taller →</a>
+        <span style="font-size:15px; color:rgba(255,255,255,.35);">$45.000 ARS · Precio de lanzamiento</span>
+      </div>
     </div>
   </section>
 
-  <!-- PASOS light card -->
-  <div class="section-pasos-wrap">
-    <div class="section-pasos">
-      <div class="pasos-header">
-        <div>
-          <span class="section-tag dark">El hilo conductor</span>
-          <h2 class="bauhaus">¿Sentís que alguien te va a descubrir?</h2>
-        </div>
-        <button class="pill-btn bosque" onclick="openModal()">Sumarme al evento ↗</button>
-      </div>
-      <p style="font-size:16px;font-weight:400;color:var(--gris);line-height:1.7;max-width:640px;margin-bottom:40px;">
-        Ese miedo tiene nombre: síndrome de la impostora. No es una señal de que vas mal — es la señal de que estás yendo por el camino que importa.
-      </p>
-      <div class="steps">
-        <div class="step">
-          <span class="step-num">01</span>
-          <div><div class="step-title">Lo nombrás</div><div class="step-body">Reconocer la voz que dice no podés es el primer acto de poder. Nombrarlo le quita fuerza.</div></div>
-        </div>
-        <div class="step">
-          <span class="step-num">02</span>
-          <div><div class="step-title">Lo entendés</div><div class="step-body">No es un defecto. Es una respuesta aprendida. Y lo que se aprende, se puede reescribir.</div></div>
-        </div>
-        <div class="step">
-          <span class="step-num">03</span>
-          <div><div class="step-title">Lo convertís en brújula</div><div class="step-body">Cuando aparece, ya sabés que significa que estás creciendo. Lo usás como señal, no como techo.</div></div>
-        </div>
-        <div class="step">
-          <span class="step-num">04</span>
-          <div><div class="step-title">No lo hacés sola</div><div class="step-body">Hay algo que cambia cuando otras mujeres te ven de verdad. No para validarte, para recordarte quién ya sos.</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- EVENTO dark -->
-  <section class="section-evento">
-    <span class="ev-tag">Aniversario · Club Conecta · 2026</span>
-    <div class="ev-grid">
-      <div>
-        <h2 class="bauhaus-ev">Primer<br><span class="ev-outline">Encuentro</span></h2>
-      </div>
-      <div>
-        <p class="ev-frase">¿Qué pasa cuando dejás de esperar estar lista?</p>
-        <div class="ev-meta">
-          <div class="ev-meta-row"><span class="ev-meta-key">Cuándo</span><span class="ev-meta-val">Miércoles 5 de agosto · 9.30hs</span></div>
-          <div class="ev-meta-row"><span class="ev-meta-key">Dónde</span><span class="ev-meta-val">Online · Link por email</span></div>
-          <div class="ev-meta-row"><span class="ev-meta-key">Costo</span><span class="ev-meta-val ev-mv acc">SIN COSTO</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="ev-countdown">
-      <div class="cd-block"><span class="cd-num" id="cd-d">00</span><span class="cd-label">Días</span></div>
-      <div class="cd-block"><span class="cd-num" id="cd-h">00</span><span class="cd-label">Horas</span></div>
-      <div class="cd-block"><span class="cd-num" id="cd-m">00</span><span class="cd-label">Minutos</span></div>
-      <div class="cd-block"><span class="cd-num" id="cd-s">00</span><span class="cd-label">Segundos</span></div>
-    </div>
-    <div class="ev-form" id="ev-home-form">
-      <input type="text" class="ev-input" placeholder="Tu nombre" aria-label="Nombre">
-      <input type="email" class="ev-input" placeholder="tu@email.com" aria-label="Email">
-      <button class="ev-submit" onclick="handleHome(event)">Quiero estar ahí →</button>
-    </div>
-    <p class="ev-nota">Sin costo · Sin spam · Solo el link y la info del evento</p>
-  </section>
-
-  <!-- EQUIPO -->
+    <!-- EQUIPO -->
   <section class="section-equipo">
     <div class="equipo-header">
       <span class="section-tag dark">El equipo</span>
@@ -1221,7 +1149,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <a href="#" onclick="showPage('home');return false;">Inicio</a>
           <a href="/blog">Blog</a>
           <a href="/podcast">Podcast & Videos</a>
-          <button onclick="openModal()">Evento 5 agosto</button>
+          <a href="/tu-mapa-visual" style="font-size:13px; color:rgba(255,255,255,.45); transition:color .15s;">Tu Mapa Visual</a>
         </div>
       </div>
       <div>
@@ -1524,7 +1452,7 @@ function updateCountdown() {
   el=document.getElementById('cd-m'); if(el) el.textContent=pad(m);
   el=document.getElementById('cd-s'); if(el) el.textContent=pad(s);
 }
-updateCountdown(); setInterval(updateCountdown, 1000);
+// countdown desactivado
 document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); });
 
 // Drag cards
